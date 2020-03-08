@@ -1,0 +1,77 @@
+@import '~/assets/styles';
+
+.link {
+  margin: spacing(1, 1.5);
+}
+.footer {
+  border-top: 1px solid;
+  @include palette-divider;
+  margin-top: $spacing8;
+  @include breakpoints-up(sm) {
+    padding-top: $spacing6;
+    padding-bottom: $spacing6;
+  }
+  & > div {
+    padding-top: $spacing10;
+    padding-bottom: $spacing10;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      list-style: none;
+      line-height: 32px;
+      a {
+        @include palette-text-secondary;
+        text-decoration: none;
+      }
+    }
+  }
+  .body-2 {
+    @include palette-text-secondary
+  }
+}
+.logo {
+  text-align: center;
+  margin-top: $spacing4;
+  img {
+    width: 64px
+  }
+}
+.socmed {
+  display: flex;
+  justify-content: center;
+  .button {
+    margin: $spacing1
+  }
+  .icon {
+    width: 24px;
+    height: 24px;
+    font-size: 24px
+  }
+}
+.select-lang {
+  margin: 0 auto;
+  width: 200px;
+  display: inherit;
+  margin-top: $spacing2
+}
+.site-map-item {
+  @include breakpoints-down('md') {
+    padding-bottom: 0 !important;
+    padding-top: 0 !important
+  }
+}
+.accordion-root {
+  background: none;
+  box-shadow: none
+}
+#main-wrap .accordion-content.v-expansion-panel {
+  background-color: transparent;
+  &:before, &:after {
+    display: none
+  }
+}
+.accordion-icon {
+  padding: 0
+}

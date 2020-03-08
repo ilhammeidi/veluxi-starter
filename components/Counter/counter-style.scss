@@ -1,0 +1,52 @@
+@import '~/assets/styles';
+
+.counter-wrap {
+  background: $palette-primary-main;
+  padding: spacing(6.5, 0);
+  position: relative;
+}
+
+#watched_counter{
+  position: absolute;
+  top: -500px;
+  width: 10px;
+  height: 10px;
+}
+
+.counter-item {
+  color: $palette-common-white;
+  align-items: center;
+  justify-content: center;
+  @include breakpoints-up(md) {
+    display: flex
+  }
+  @include breakpoints-down(sm) {
+    text-align: center;
+  }
+  @include breakpoints-down(xs) {
+    display: flex;
+    text-align: left;
+  }
+  .icon {
+    color: $palette-common-white;
+    width: 40px;
+    height: 40px;
+    font-size: 80px;
+    line-height: 80px;
+    @include breakpoints-up(md) {
+      @include margin-right($spacing2);
+      width: 80px;
+      height: 80px;
+    }
+    @include breakpoints-down(xs) {
+      @include margin-right($spacing2);
+      width: 80px;
+      height: 80px;
+    }
+  }
+  .text {
+    h4 {
+      font-weight: bold;
+    }
+  }
+}

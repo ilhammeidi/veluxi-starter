@@ -1,0 +1,70 @@
+// Base unit
+$unit: 8px;
+
+// Spacing unit
+$spacing1: 1 * $unit;
+$spacing2: 2 * $unit;
+$spacing3: 3 * $unit;
+$spacing4: 4 * $unit;
+$spacing5: 5 * $unit;
+$spacing6: 6 * $unit;
+$spacing7: 7 * $unit;
+$spacing8: 8 * $unit;
+$spacing9: 9 * $unit;
+$spacing10: 10 * $unit;
+$spacing11: 11 * $unit;
+$spacing12: 12 * $unit;
+$spacing13: 13 * $unit;
+$spacing14: 14 * $unit;
+$spacing15: 15 * $unit;
+$spacing16: 16 * $unit;
+$spacing17: 17 * $unit;
+$spacing18: 18 * $unit;
+$spacing19: 19 * $unit;
+$spacing20: 20 * $unit;
+
+// Font weight
+$font-regular: 400;
+$font-medium: 500;
+$font-bold: 700;
+
+// Theme color palette primary
+$palette-primary-main: var(--v-primary-base);
+$palette-primary-light: var(--v-primarylight-base);
+$palette-primary-dark: var(--v-primarydark-base);
+
+// Theme color palette secondary
+$palette-secondary-main: var(--v-secondary-base);
+$palette-secondary-light: var(--v-secondarylight-base);
+$palette-secondary-dark: var(--v-secondarydark-base);
+
+// Common color palette
+$palette-common-white: #FFF;
+$palette-common-black: #000;
+
+// Light color palette
+$light-text-primary: rgba(0, 0, 0, 0.87);
+$light-text-secondary: rgba(0, 0, 0, 0.54);
+$light-text-disabled: rgba(0, 0, 0, 0.38);
+$light-text-hint: rgba(0, 0, 0, 0.38);
+
+$light-divider: rgba(0, 0, 0, 0.12);
+
+$light-background-paper: #fff;
+$light-background-default: #fafafa;
+
+// Dark Color Palette
+$dark-text-primary: #fff;
+$dark-text-secondary: rgba(255, 255, 255, 0.7);
+$dark-text-disabled: rgba(255, 255, 255, 0.5);
+$dark-text-hint: rgba(255, 255, 255, 0.5);
+
+$dark-divider: rgba(255, 255, 255, 0.12);
+
+$dark-background-paper: #424242;
+$dark-background-default: #303030;
+
+// Rounded Border Radius
+$rounded-small: 8px;
+$rounded-medium: 12px;
+$rounded-big: 20px;

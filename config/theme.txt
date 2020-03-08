@@ -1,0 +1,198 @@
+oceanBlue: {
+  primary: colors.blue.base, // primary main
+  primarylight: colors.blue.lighten4, // primary light
+  primarydark: colors.blue.darken4, // primary dark
+  secondary: colors.cyan.base, // secondary main
+  secondarylight: colors.cyan.lighten4, // secondary light
+  secondarydark: colors.cyan.darken4, // secondary dark
+  anchor: colors.blue.base // link
+},
+greenLeaf: {
+  primary: colors.green.base, // primary main
+  primarylight: colors.green.lighten4, // primary light
+  primarydark: colors.green.darken4, // primary dark
+  secondary: colors.blueGrey.base, // secondary main
+  secondarylight: colors.blueGrey.lighten4, // secondary light
+  secondarydark: colors.blueGrey.darken3, // secondary dark
+  anchor: colors.green.base // link
+},
+money: {
+  primary: colors.green.base, // primary main
+  primarylight: colors.green.lighten4, // primary light
+  primarydark: colors.green.darken3, // primary dark
+  secondary: colors.amber.darken2, // secondary main
+  secondarylight: colors.amber.lighten4, // secondary light
+  secondarydark: colors.amber.darken4, // secondary dark
+  anchor: colors.green.base // link
+},
+grayscale: {
+  primary: colors.blueGrey.darken1, // primary main
+  primarylight: colors.blueGrey.lighten4, // primary light
+  primarydark: colors.blueGrey.darken4, // primary dark
+  secondary: colors.brown.base, // secondary main
+  secondarylight: colors.brown.lighten4, // secondary light
+  secondarydark: colors.brown.darken4, // secondary dark
+  anchor: colors.brown.base // link
+},
+cloud: {
+  primary: colors.lightBlue.base, // primary main
+  primarylight: colors.lightBlue.lighten4, // primary light
+  primarydark: colors.lightBlue.darken4, // primary dark
+  secondary: colors.orange.base, // secondary main
+  secondarylight: colors.orange.lighten4, // secondary light
+  secondarydark: colors.orange.darken4, // secondary dark
+  anchor: colors.lightBlue.base // link
+},
+joker: {
+  primary: colors.deepPurple.base, // primary main
+  primarylight: colors.deepPurple.lighten4, // primary light
+  primarydark: colors.deepPurple.darken4, // primary dark
+  secondary: colors.cyan.base, // secondary main
+  secondarylight: colors.cyan.lighten4, // secondary light
+  secondarydark: colors.cyan.darken4, // secondary dark
+  anchor: colors.deepPurple.base // link
+},
+violet: {
+  primary: colors.pink.lighten1, // primary main
+  primarylight: colors.pink.lighten4, // primary light
+  primarydark: colors.pink.darken4, // primary dark
+  secondary: colors.deepPurple.base, // secondary main
+  secondarylight: colors.deepPurple.lighten4, // secondary light
+  secondarydark: colors.deepPurple.darken3, // secondary dark
+  anchor: colors.pink.base // link
+},
+violeta: {
+  primary: colors.purple.base, // primary main
+  primarylight: colors.purple.lighten4, // primary light
+  primarydark: colors.purple.darken3, // primary dark
+  secondary: colors.lightGreen.base, // secondary main
+  secondarylight: colors.lightGreen.lighten4, // secondary light
+  secondarydark: colors.lightGreen.darken3, // secondary dark
+  anchor: colors.purple.base // link
+},
+burgundy: {
+  primary: colors.pink.base, // primary main
+  primarylight: colors.pink.lighten4, // primary light
+  primarydark: colors.pink.darken4, // primary dark
+  secondary: colors.indigo.base, // secondary main
+  secondarylight: colors.indigo.lighten4, // secondary light
+  secondarydark: colors.indigo.darken4, // secondary dark
+  anchor: colors.indigo.base // link
+},
+roseGold: {
+  primary: colors.pink.lighten1, // primary main
+  primarylight: colors.pink.lighten5, // primary light
+  primarydark: colors.pink.darken1, // primary dark
+  secondary: colors.amber.darken2, // secondary main
+  secondarylight: colors.amber.lighten5, // secondary light
+  secondarydark: colors.amber.darken4, // secondary dark
+  anchor: colors.amber.base // link
+},
+deepBlue: {
+  primary: colors.indigo.base, // primary main
+  primarylight: colors.indigo.lighten5, // primary light
+  primarydark: colors.indigo.darken3, // primary dark
+  secondary: colors.lightBlue.base, // secondary main
+  secondarylight: colors.lightBlue.lighten5, // secondary light
+  secondarydark: colors.lightBlue.darken3, // secondary dark
+  anchor: colors.indigo.base // link
+},
+ubuntu: {
+  primary: colors.orange.darken3, // primary main
+  primarylight: colors.orange.lighten5, // primary light
+  primarydark: colors.orange.darken4, // primary dark
+  secondary: colors.purple.base, // secondary main
+  secondarylight: colors.purple.lighten5, // secondary light
+  secondarydark: colors.purple.darken2, // secondary dark
+  anchor: colors.orange.base // link
+},
+greenNature: {
+  primary: colors.teal.base, // primary main
+  primarylight: colors.teal.lighten5, // primary light
+  primarydark: colors.teal.darken3, // primary dark
+  secondary: colors.lightGreen.darken2, // secondary main
+  secondarylight: colors.lightGreen.lighten5, // secondary light
+  secondarydark: colors.lightGreen.darken4, // secondary dark
+  anchor: colors.teal.base // link
+},
+vampire: {
+  primary: colors.red.base, // primary main
+  primarylight: colors.red.lighten5, // primary light
+  primarydark: colors.red.darken1, // primary dark
+  secondary: colors.blueGrey.base, // secondary main
+  secondarylight: colors.blueGrey.lighten5, // secondary light
+  secondarydark: colors.blueGrey.darken2, // secondary dark
+  anchor: colors.red.base // link
+},
+mint: {
+  primary: colors.blue.base, // primary main
+  primarylight: colors.blue.lighten4, // primary light
+  primarydark: colors.blue.darken4, // primary dark
+  secondary: colors.lightBlue.base, // secondary main
+  secondarylight: colors.lightBlue.lighten4, // secondary light
+  secondarydark: colors.lightBlue.darken4, // secondary dark
+  anchor: colors.blue.base // link
+},
+gold: {
+  primary: colors.orange.accent3, // primary main
+  primarylight: colors.yellow.lighten4, // primary light
+  primarydark: colors.orange.accent4, // primary dark
+  secondary: colors.brown.lighten1, // secondary main
+  secondarylight: colors.brown.lighten5, // secondary light
+  secondarydark: colors.brown.darken3, // secondary dark
+  anchor: colors.orange.base // link
+},
+botani: {
+  primary: colors.lightGreen.darken2, // primary main
+  primarylight: colors.lightGreen.lighten4, // primary light
+  primarydark: colors.lightGreen.darken4, // primary dark
+  secondary: colors.pink.lighten2, // secondary main
+  secondarylight: colors.pink.lighten5, // secondary light
+  secondarydark: colors.pink.darken3, // secondary dark
+  anchor: colors.lightGreen.base // link
+},
+littleQueen: {
+  primary: colors.cyan.base, // primary main
+  primarylight: colors.cyan.lighten5, // primary light
+  primarydark: colors.cyan.darken4, // primary dark
+  secondary: colors.pink.lighten2, // secondary main
+  secondarylight: colors.pink.lighten5, // secondary light
+  secondarydark: colors.pink.darken3, // secondary dark
+  anchor: colors.cyan.base // link
+},
+purple: {
+  primary: colors.purple.base, // primary main
+  primarylight: colors.purple.lighten5, // primary light
+  primarydark: colors.purple.darken3, // primary dark
+  secondary: colors.purple.accent4, // secondary main
+  secondarylight: colors.purple.accent1, // secondary light
+  secondarydark: colors.purple.darken4, // secondary dark
+  anchor: colors.cyan.base // link
+},
+black: {
+  primary: colors.grey.darken4, // primary main
+  primarylight: colors.grey.base, // primary light
+  primarydark: colors.black, // primary dark
+  secondary: colors.grey.darken1, // secondary main
+  secondarylight: colors.grey.lighten2, // secondary light
+  secondarydark: colors.grey.darken3, // secondary dark
+  anchor: colors.grey.base // link
+},
+brown: {
+  primary: colors.brown.base, // primary main
+  primarylight: colors.brown.lighten4, // primary light
+  primarydark: colors.brown.darken3, // primary dark
+  secondary: '#794848', // secondary main
+  secondarylight: '#ccb0b0', // secondary light
+  secondarydark: colors.brown.darken4, // secondary dark
+  anchor: colors.brown.base // link
+},
+showcase: {
+  primary: colors.grey.darken3, // primary main
+  primarylight: colors.grey.lighten2, // primary light
+  primarydark: colors.black, // primary dark
+  secondary: colors.grey.darken3, // secondary main
+  secondarylight: colors.grey.lighten2, // secondary light
+  secondarydark: colors.black, // secondary dark
+  anchor: colors.blue.base // link
+}

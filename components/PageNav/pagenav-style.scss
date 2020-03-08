@@ -1,0 +1,73 @@
+@import '~/assets/styles';
+
+.fab {
+  transform: scale(0.5);
+  transition: all 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-weight: $font-bold;
+  .icon {
+    color: $palette-common-white;
+    font-size: 40px;
+  }
+  &:hover {
+    .icon {
+      color: $palette-primary-light
+    }
+  }
+}
+
+.page-nav {
+  z-index: 200;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 56px;
+  &.show {
+    .fab {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  .section-nav {
+    section {
+      margin: 0 0 76px 22px;
+      padding: 0;
+      position: relative
+    }
+    a {
+      margin-bottom: $spacing2;
+      opacity: 0;
+      position: relative;
+      transition: all 0.4s ease;
+      width: 12px;
+      height: 12px;
+      @include shadow2;
+      border-radius: 12px;
+      @include palette-background-paper;
+      border: 1px solid;
+      @include use-theme(border-color, $light-text-hint, $dark-text-hint);
+      display: block;
+      transition: all 0.4s ease;
+      color: transparent;
+      &.active {
+        background: $palette-primary-main;
+        height: 30px;
+        border: 1px solid $palette-primary-light;
+      }
+    }
+  }
+  &:hover {
+    .section-nav a {
+      opacity: 1;
+      top: 0 !important;
+    }
+  }
+}
+
+.tooltip {
+  text-transform: capitalize;
+  font-size: 14;
+}

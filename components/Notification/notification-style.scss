@@ -1,0 +1,42 @@
+.notification {
+  width: 95%;
+  margin: 0 auto;
+  @include breakpoints-up(lg) {
+    width: 80%
+  }
+  ::v-deep .v-snack__wrapper {
+    width: 100%;
+    margin-bottom: $spacing2;
+    max-width: none;
+    font-size: 16px;
+    color: $palette-common-white;
+    background: $palette-common-black;
+    @include breakpoints-up(sm) {
+      padding: spacing(0.5, 2)
+    }
+    > div:first-child {
+      @include breakpoints-up(sm) {
+        flex: 1;
+        @include margin-right($spacing2)
+      }
+      @include breakpoints-down(xs) {
+        text-align: center
+      }
+    }
+  }
+  .button.v-btn {
+    width: 100%;
+    @include breakpoints-up(sm) {
+      width: 150px;
+    }
+  }
+}
+
+
+.action {
+  @include breakpoints-down(xs) {
+    width: 100%;
+    padding: 0;
+    margin: 0
+  }
+}

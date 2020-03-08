@@ -1,0 +1,106 @@
+.use-text {
+  &-title {
+    font-weight: $font-bold;
+    font-size: 48px;
+    line-height: 72px;
+    @include breakpoints-down(md) {
+      font-size: 38px;
+      line-height: 60px;
+    }
+    @include breakpoints-down(xs) {
+      font-size: 28px;
+      line-height: 44px;
+    }
+  }
+  &-title2 {
+    font-size: 36px;
+    line-height: 56px;
+    font-weight: $font-bold;
+    @include breakpoints-down(md) {
+      font-size: 32px;
+      line-height: 48px;
+    }
+    @include breakpoints-down(xs) {
+      font-size: 24px;
+      line-height: 36px;
+    }
+  }
+  &-subtitle {
+    font-weight: $font-medium;
+    font-size: 28px;
+    line-height: 44px;
+    @include breakpoints-down(md) {
+      font-size: 24px;
+      line-height: 36px;
+    }
+    @include breakpoints-down(xs) {
+      font-size: 18px;
+      line-height: 28px;
+    }
+  }
+  &-subtitle2 {
+    font-weight: $font-regular;
+    font-size: 22px;
+    line-height: 32px;
+    @include breakpoints-down(md) {
+      font-size: 20px;
+      line-height: 32px
+    }
+    @include breakpoints-down(xs) {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+  &-paragraph {
+    font-weight: $font-regular;
+    font-size: 16px;
+    line-height: 24px
+  }
+  &-caption {
+    font-weight: $font-regular;
+    font-size: 16px;
+    line-height: 24px;
+    @include breakpoints-down(xs) {
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+}
+
+.use-hidden {
+  &-lg-down {
+    @include breakpoints-down(lg) {
+      display: none;
+    }
+  }
+  &-md-down {
+    @include breakpoints-down(md) {
+      display: none;
+    }
+  }
+  &-sm-down {
+    @include breakpoints-down(sm) {
+      display: none;
+    }
+  }
+  &-xs-down {
+    @include breakpoints-down(xs) {
+      display: none;
+    }
+  }
+  &-lg-up {
+    @include breakpoints-up(lg) {
+      display: none;
+    }
+  }
+  &-md-up {
+    @include breakpoints-up(md) {
+      display: none;
+    }
+  }
+  &-sm-up {
+    @include breakpoints-up(sm) {
+      display: none;
+    }
+  }
+}

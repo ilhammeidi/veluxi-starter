@@ -1,0 +1,164 @@
+@import '~/assets/styles';
+
+@mixin decoration {
+  @include use-theme(background, $palette-primary-light, $palette-primary-dark, );
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  @include left(60px);
+  left: 60px;
+  opacity: 0.5
+}
+
+.container {
+  position: relative
+}
+
+.page-section {
+  margin-bottom: $spacing20
+}
+
+.feature-wrap {
+  position: relative
+}
+
+.feature-list {
+  text-align: center;
+  & h5 {
+    margin: spacing(3, 0);
+  }
+  .icon {
+    color: $palette-primary-main;
+    font-size: 100px;
+  }
+}
+
+.feature-more {
+  position: relative;
+  .title-app {
+    margin-Bottom: $spacing3
+  }
+  .text {
+    font-size: 22px
+  }
+  .img {
+    position: relative;
+    width: 400px;
+    max-width: 98%;
+    img {
+      width: 100%
+    }
+  }
+  .img-full {
+    position: relative;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: $spacing5;
+    img {
+      width: 100%
+    }
+  }
+}
+
+.feature-item {
+  position: relative;
+  margin-bottom: $spacing20;
+  @include breakpoints-down(xs) {
+    text-align: center;
+  }
+  &.last {
+    margin-bottom: 0;
+  }
+}
+
+.deco1 {
+  @include decoration;
+  transform: translateY(-20px);
+}
+
+.deco2 {
+  @include decoration;
+  width: 450px;
+  height: 450px;
+  transform: translateY(-40px);
+  @include left(calc(50% - 350px))
+}
+
+.parallax-wrap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  top: 0;
+  @include left(0);
+  z-index: 0;
+}
+
+.banner-parallax-wrap {
+  height: 2500px;
+  width: 100%;
+  position: absolute;
+  display: block;
+  .figure {
+    height: 2500px;
+    width: 100%;
+    display: block;
+    position: absolute;
+  }
+  .figure > div {
+    height: 2500px;
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    & > div {
+      height: 100% !important
+    }
+  }
+}
+
+.parallax-vertical {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform: scale(0.35)
+}
+
+.parallax-dot {
+  top: 100px;
+  width: 845px;
+  height: 1099px;
+  opacity: 0.4;
+  @include left(-370px);
+  .theme--light & {
+    fill: $light-text-hint;
+  }
+  .theme--dark & {
+    fill: $dark-text-hint;
+  }
+}
+
+.parallax-triangle {
+  top: 100px;
+  opacity: 0.1;
+  width: 902px;
+  height: 2042px;
+  fill: transparent;
+  stroke-width: 50px;
+  @include right(-210px);
+  @include use-theme(outline, $light-text-hint, $dark-text-hint);
+  @include use-theme(stroke, $light-text-hint, $dark-text-hint);
+}
+
+.parallax-circle {
+  top: 600px;
+  width: 600px;
+  height: 570px;
+  opacity: 0.1;
+  fill: transparent;
+  stroke-width: 40px;
+  @include right(40px);
+  @include use-theme(stroke, $light-text-hint, $dark-text-hint);
+}
