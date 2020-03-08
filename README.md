@@ -25,7 +25,7 @@ https://github.com/ilhammeidi/luxivue-doc
 
 [GET IT NOW on Envato](https://themeforest.net/user/ilhammeidi/portfolio)
 
-[SEE DEMO](http://veluxi.ux-maestro.com/en)
+[SEE DEMO](http://veluxi.ux-maestro.com)
 
 ### Installation
 
