@@ -23,7 +23,7 @@ https://github.com/ilhammeidi/luxivue-doc
 # Get All Landing Page Collection
 ![Luxiren](https://firebasestorage.googleapis.com/v0/b/enlite-3a841.appspot.com/o/images%2Fbanner.jpg?alt=media&token=91dc834d-9c7c-44d1-8b64-f4e4af0d0bfe)
 
-[GET IT NOW on Envato](https://themeforest.net/user/ilhammeidi/portfolio)
+[GET IT NOW on Envato](https://themeforest.net/item/veluxi-vue-js-landing-page-collection/26016174)
 
 [SEE DEMO](http://veluxi.ux-maestro.com)
 
