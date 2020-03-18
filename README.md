@@ -2,7 +2,7 @@
 ----------
 
 ### Read documentation here
-https://github.com/ilhammeidi/luxivue-doc
+http://ilhammeidi.github.io/luxivue-doc
 
 ### Template Feature
 - Modern Technologies. Built with one of most popular javascript library Vue.JS, Vuetify and Nuxt.JS with SSR
