@@ -1,5 +1,3 @@
-@import '~/assets/styles';
-
 $flag: '/images/flag-logo.png';
 
 @mixin flag-icon{
@@ -209,7 +207,7 @@ $flag: '/images/flag-logo.png';
   width: 240px;
   @include palette-background-default;
   padding: spacing(10, 2, 4);
-  z-index: 20
+  z-index: 90
 }
 
 .menu-list {

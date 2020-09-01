@@ -21,7 +21,7 @@
             :class="{ invert: invert, active: open }"
             class="icon"
           >
-            mdi-settings
+            settings
           </v-icon>
         </v-btn>
       </div>

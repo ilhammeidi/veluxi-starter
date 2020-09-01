@@ -1,5 +1,3 @@
-@import '~/assets/styles';
-
 .link {
   margin: spacing(1, 1.5);
 }
@@ -24,6 +22,9 @@
       a {
         @include palette-text-secondary;
         text-decoration: none;
+        &:hover {
+          color: $palette-primary-main
+        }
       }
     }
   }

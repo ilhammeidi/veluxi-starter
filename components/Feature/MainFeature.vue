@@ -25,7 +25,7 @@
       </v-col>
       <v-col class="px-6" md="4">
         <div class="feature-list">
-          <v-icon color="primary" class="icon">mdi-xbox-controller</v-icon>
+          <v-icon color="primary" class="icon">mdi-google-controller</v-icon>
           <h5 class="headline">
             Lorem ipsum dolor
           </h5>

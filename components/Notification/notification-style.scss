@@ -15,14 +15,18 @@
       padding: spacing(0.5, 2)
     }
     > div:first-child {
-      @include breakpoints-up(sm) {
-        flex: 1;
-        @include margin-right($spacing2)
+      display: flex;
+      align-items: center;
+      .action {
+        @include breakpoints-up(sm) {
+          flex: 1;
+          @include margin-right($spacing2)
+        }
+        @include breakpoints-down(xs) {
+          text-align: center
+        }
       }
-      @include breakpoints-down(xs) {
-        text-align: center
-      }
-    }
+    } 
   }
   .button.v-btn {
     width: 100%;

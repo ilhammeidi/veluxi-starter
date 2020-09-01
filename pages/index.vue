@@ -56,8 +56,6 @@
 </template>
 
 <style scoped lang="scss">
-@import '~/assets/styles';
-
 @function section-margin($margin) {
   @return $margin * 15;
 }

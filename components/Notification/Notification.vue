@@ -1,6 +1,6 @@
 <template>
   <v-snackbar
-    :timeout="0"
+    :timeout="-1"
     v-model="snackbar"
     class="notification"
   >

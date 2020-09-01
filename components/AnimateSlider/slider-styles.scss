@@ -1,5 +1,3 @@
-@import '~/assets/styles';
-
 .slider-content {
   text-align: center;
   .inner {
@@ -76,9 +74,10 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: url('http://svgshare.com/i/41_.svg') no-repeat center center / 16px;
-  width: 32px;
-  height: 32px;
+  background: url('https://svgshare.com/i/P9S.svg') no-repeat center center / 16px;
+  width: 40px;
+  height: 40px;
+  background-size: 100% 100%;
   text-indent: -9999px;
   cursor: pointer;
 }
@@ -93,7 +92,6 @@
 
 .prev {
   left: 0;
-  background: url('http://svgshare.com/i/41_.svg') no-repeat center center / 16px;
   left: 0;
   -webkit-transform: rotate(180deg) translateY(calc(50% + 0px));
           transform: rotate(180deg) translateY(calc(50% + 0px));

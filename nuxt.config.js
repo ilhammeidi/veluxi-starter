@@ -34,7 +34,7 @@ module.exports = {
       { property: 'twitter:card', content: 'summary' },
       { property: 'twitter:image:src', content: '/images/logo.png' },
       { property: 'og:url', content: brand.starter.url },
-      { property: 'og:title', content: brand.starter.title },
+      { property: 'og:title', content: brand.starter.projectName },
       { property: 'og:description', content: brand.starter.desc },
       { name: 'twitter:site', content: brand.starter.url },
       { name: 'twitter:card', content: 'summary_large_image' },
@@ -63,7 +63,7 @@ module.exports = {
       // Fonts and Icons
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Montserrat:400,500,600&display=swap' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons' },
-      { rel: 'stylesheet', href: 'http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css' }
+      { rel: 'stylesheet', href: 'https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css' }
     ]
   },
   /*
@@ -179,6 +179,11 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
+    // cssSourceMap: false,
+    loaders: {
+      vus: { cacheBusting: true },
+      scss: { sourceMap: false }
+    },
     extend (config, ctx) {
       config.plugins.push(
         new FilterWarningsPlugin({

@@ -1,5 +1,3 @@
-@import '~/assets/styles';
-
 @mixin decoration {
   @include use-theme(background, $palette-primary-light, $palette-primary-dark, );
   border-radius: 50%;

@@ -172,7 +172,7 @@ purple: {
 black: {
   primary: colors.grey.darken4, // primary main
   primarylight: colors.grey.base, // primary light
-  primarydark: colors.black, // primary dark
+  primarydark: colors.shades.black, // primary dark
   secondary: colors.grey.darken1, // secondary main
   secondarylight: colors.grey.lighten2, // secondary light
   secondarydark: colors.grey.darken3, // secondary dark
@@ -190,7 +190,7 @@ brown: {
 showcase: {
   primary: colors.grey.darken3, // primary main
   primarylight: colors.grey.lighten2, // primary light
-  primarydark: colors.black, // primary dark
+  primarydark: colors.shades.black, // primary dark
   secondary: colors.grey.darken3, // secondary main
   secondarylight: colors.grey.lighten2, // secondary light
   secondarydark: colors.black, // secondary dark
