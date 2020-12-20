@@ -45,7 +45,7 @@ $flag: '/images/flag-logo.png';
   }
 }
 
-.header {
+.header.v-sheet.v-app-bar {
   @include palette-text-primary;
   @include palette-background-paper;
   box-shadow: none;

@@ -1,31 +1,9 @@
-$duration: 0.3s;
-
-// On change layout
-.layout {
-  &-enter-active, &-leave-active {
-    transition: opacity $duration;
-  }
-  &-enter, &-leave-active{
-    opacity: 0
-  }
-}
-
-// On change routes
-.page {
-  &-enter-active, &-leave-active {
-    transition: opacity $duration;
-  }
-  &-enter, &-leave-active{
-    opacity: 0
-  }
-}
-
-// On reload page
-.fade {
-  &-enter-active, &-leave-active {
-    transition: opacity $duration;
-  }
-  &-enter, &-leave-active{
-    opacity: 0
+/* Fade Up */
+#main-wrap {
+  opacity: 0;
+  &.page-fade-transition-exit {
+    opacity: 1;
+    -webkit-transition: opacity 400ms;
+    transition: opacity 400ms;
   }
 }

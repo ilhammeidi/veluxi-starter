@@ -1,5 +1,6 @@
 <template>
   <div
+    v-if="loaded"
     v-scroll="handleScroll"
     :class="{ 'active': active, 'pending': !active }"
     class="scroll-wrap"
@@ -18,8 +19,12 @@ export default {
   },
   data() {
     return {
-      active: false
+      active: false,
+      loaded: false
     }
+  },
+  mounted() {
+    this.loaded = true
   },
   computed: {
     offsetTop: function() {

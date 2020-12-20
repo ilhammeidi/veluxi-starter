@@ -2,8 +2,8 @@
   <v-app dark>
     <transition name="fade">
       <div
-        v-if="show"
         id="main-wrap"
+        :class="{'page-fade-transition-exit': !play}"
       >
         <v-main>
           <nuxt />
@@ -18,14 +18,16 @@ export default {
   loading: false,
   data() {
     return {
-      show: false
+      play: true
     }
   },
   mounted: function() {
     // Preloader and Progress bar setup
-    this.show = true
     this.$nextTick(() => {
-      setTimeout(() => this.$nuxt.$loading.finish(), 500)
+      setTimeout(() => {
+        this.$nuxt.$loading.finish()
+        this.play = false
+      }, 500)
       this.$nuxt.$loading.start()
     })
     const preloader = document.getElementById('preloader')
@@ -35,16 +37,6 @@ export default {
     // RTL initial
     const rtlURL = document.location.pathname.split('/')[1] === 'ar'
     this.$vuetify.rtl = rtlURL
-  },
-  methods: {
-    changeColor: function() {
-      this.$vuetify.theme.themes = {
-        light: {
-          primary: '#00af4a',
-          secondary: '#ff2020'
-        }
-      }
-    }
   }
 }
 </script>
