@@ -55,7 +55,7 @@
 		"webpack-node-externals": "^1.7.2"
 	},
 	"devDependencies": {
-		"@nuxtjs/vuetify": "^1.9.1",
+		"@nuxtjs/vuetify": "1.9.1",
 		"babel-eslint": "^8.2.6",
 		"eslint": "^5.0.1",
 		"eslint-config-prettier": "^3.1.0",
