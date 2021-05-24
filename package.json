@@ -21,19 +21,22 @@
 		"generate": "nuxt generate",
 		"lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
 	},
+	"resolutions": {
+		"@babel/preset-env": "7.12.17"
+	},
 	"dependencies": {
-		"@nuxtjs/eslint-config": "^3.1.0",
+		"@babel/core": "^7.0.0-0",
+		"@babel/preset-env": "7.12.17",
+		"@nuxtjs/eslint-config": "^5.0.0",
 		"@nuxtjs/html-minifier": "^0.1.2",
 		"@nuxtjs/style-resources": "^1.0.0",
 		"animate.css": "^3.7.2",
-		"babel": "^6.23.0",
 		"babel-plugin-transform-imports": "^2.0.0",
 		"cross-env": "^5.2.0",
-		"eslint-plugin-nuxt": "^0.5.0",
+		"eslint-plugin-nuxt": "^2.0.0",
 		"express": "^4.16.4",
-    "fibers": "^5.0.0",
+		"fibers": "^5.0.0",
 		"jquery": "^3.4.1",
-		"node-sass": "^4.14.0",
 		"nuxt": "2.14.0",
 		"nuxt-i18n": "^6.4.1",
 		"nuxt-mq": "^2.0.1",
@@ -41,9 +44,10 @@
 		"nuxt-start": "^2.14.4",
 		"rtl-sass": "^1.5.0",
 		"vue": "^2.6.12",
-		"sass-loader": "^8.0.0",
+		"sass": "1.32.12",
+		"sass-loader": "10.1.1",
 		"vue-countup-directive": "^1.2.3",
-		"vue-fragment": "^1.5.1",
+		"vue-fragment": "1.5.1",
 		"vue-parallaxy": "^1.1.1",
 		"vue-scrollactive": "^0.8.0",
 		"vue-slick": "^1.1.15",
@@ -55,13 +59,13 @@
 		"webpack-node-externals": "^1.7.2"
 	},
 	"devDependencies": {
-		"@nuxtjs/vuetify": "1.9.1",
+		"@nuxtjs/vuetify": "^1.11.3",
 		"babel-eslint": "^8.2.6",
-		"eslint": "^5.0.1",
+		"eslint": "^7.9.0",
 		"eslint-config-prettier": "^3.1.0",
-		"eslint-loader": "^2.0.0",
 		"eslint-plugin-prettier": "2.6.2",
 		"eslint-plugin-vue": "^4.7.1",
+		"eslint-webpack-plugin": "^2.2.0",
 		"nodemon": "^2.0.1",
 		"prettier": "1.14.3"
 	}

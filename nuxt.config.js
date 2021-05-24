@@ -194,7 +194,7 @@ module.exports = {
         config.module.rules.push({
           enforce: "pre",
           test: /\.(js|vue)$/,
-          loader: "eslint-loader",
+          loader: "eslint-webpack-plugin",
           exclude: /([node_modules, static])/,
           options: {
             fix: false
