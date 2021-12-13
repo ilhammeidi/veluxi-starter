@@ -3,7 +3,7 @@ const brand = {
     name: 'Veluxi Starter',
     desc: 'Vue Starter Template',
     prefix: 'veluxi',
-    footerText: 'Veluxi Theme All Rights Reserved 2020',
+    footerText: 'Veluxi Theme All Rights Reserved 2021',
     logoText: 'Veluxi Theme',
     projectName: 'Starter Project',
     url: 'veluxi.ux-maestro.com',

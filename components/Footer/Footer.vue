@@ -86,28 +86,28 @@
             icon
             class="button"
           >
-            <span class="ion-social-facebook icon" />
+            <span class="ion-logo-facebook icon" />
           </v-btn>
           <v-btn
             text
             icon
             class="button"
           >
-            <span class="ion-social-twitter icon" />
+            <span class="ion-logo-twitter  icon" />
           </v-btn>
           <v-btn
             text
             icon
             class="button"
           >
-            <span class="ion-social-instagram icon" />
+            <span class="ion-logo-instagram icon" />
           </v-btn>
           <v-btn
             text
             icon
             class="button"
           >
-            <span class="ion-social-linkedin icon" />
+            <span class="ion-logo-linkedin icon" />
           </v-btn>
         </div>
         <v-select

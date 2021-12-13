@@ -7,7 +7,7 @@ export default function({ app }) {
   } else {
     app.head.htmlAttrs.dir = 'ltr'
   }
-  app.i18n.beforeLanguageSwitch = (oldLocale, newLocale) => {
+  app.i18n.onBeforeLanguageSwitch = (oldLocale, newLocale) => {
     if (newLocale === 'ar') {
       app.vuetify.framework.rtl = true
       app.head.htmlAttrs.dir = 'rtl'

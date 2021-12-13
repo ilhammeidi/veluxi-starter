@@ -1,11 +1,11 @@
 import FilterWarningsPlugin from 'webpack-filter-warnings-plugin'
+import ESLintPlugin from 'eslint-webpack-plugin'
 import nodeExternals from 'webpack-node-externals'
 import { theme } from './config/vuetify.options'
 import languages from './static/lang/languages'
 import brand from './static/text/brand'
 
 module.exports = {
-  mode: 'universal',
   /*
   ** Headers of the page
   */
@@ -63,7 +63,7 @@ module.exports = {
       // Fonts and Icons
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Montserrat:400,500,600&display=swap' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons' },
-      { rel: 'stylesheet', href: 'https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css' }
+      { rel: 'stylesheet', href: 'https://unpkg.com/ionicons@3.0.0/dist/css/ionicons.min.css' }
     ]
   },
   /*
@@ -123,7 +123,7 @@ module.exports = {
       }
     ],
     [
-      'nuxt-i18n',
+      '@nuxtjs/i18n',
       {
         // Options
         //to make it seo friendly remove below line and add baseUrl option to production domain
@@ -190,17 +190,15 @@ module.exports = {
           exclude: /Critical dependency: the request of a dependency is an expression/
         })
       );
-      if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: "pre",
-          test: /\.(js|vue)$/,
-          loader: "eslint-webpack-plugin",
-          exclude: /([node_modules, static])/,
-          options: {
-            fix: false
-          }
-        });
-      }
+      //      if (ctx.isDev && ctx.isClient) {
+      //        config.plugins.push(
+      //          new ESLintPlugin({
+      //            extensions: ["js", "vue"],
+      //            exclude: ["node_modules", "static"],
+      //            fix: false
+      //          })
+      //        );
+      //      }
     }
   },
   /*

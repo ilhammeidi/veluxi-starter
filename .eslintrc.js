@@ -23,6 +23,7 @@
       'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
       'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
       'no-nested-ternary': 0,
+      'vue/no-template-shadow': 0,
       'import/no-unresolved': 0,
       'import/no-named-as-default': 0,
       'no-unused-expressions': 0,
