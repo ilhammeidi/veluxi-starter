@@ -14,13 +14,6 @@ export default [
     dir: 'ltr'
   },
   {
-    code: 'en',
-    iso: 'en-US',
-    name: 'English',
-    file: 'en-US.js',
-    dir: 'ltr'
-  },
-  {
     code: 'id',
     iso: 'id-ID',
     name: 'Bahasa Indonesia',
@@ -41,4 +34,11 @@ export default [
     file: 'zh-ZH.js',
     dir: 'ltr'
   },
+  {
+    code: 'en',
+    iso: 'eng-US',
+    name: 'English',
+    file: 'en-US.js',
+    dir: 'ltr'
+  }
 ]

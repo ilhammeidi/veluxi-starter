@@ -87,9 +87,9 @@
 <script>
 import { mapGetters, mapState } from 'vuex'
 
-let darkMode = false
+let darkMode = 'false'
 if (typeof Storage !== 'undefined') { // eslint-disable-line
-  darkMode = localStorage.getItem('luxiDarkMode') || false
+  darkMode = localStorage.getItem('luxiDarkMode') || 'false'
 }
 
 export default {

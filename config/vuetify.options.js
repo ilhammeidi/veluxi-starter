@@ -1,8 +1,8 @@
 import colors from 'vuetify/lib/util/colors'
 
-let darkMode = false
+let darkMode = 'false'
 if (typeof Storage !== 'undefined') { // eslint-disable-line
-  darkMode = localStorage.getItem('luxiDarkMode') || false
+  darkMode = localStorage.getItem('luxiDarkMode') || 'false'
 }
 
 const palette = {

@@ -122,28 +122,23 @@ module.exports = {
         }
       }
     ],
-    [
-      '@nuxtjs/i18n',
-      {
-        // Options
-        //to make it seo friendly remove below line and add baseUrl option to production domain
-        seo: false,
-        // baseUrl: 'https://my-nuxt-app.com',
-        lazy: true,
-        locales: languages,
-        defaultLocale: 'en',
-        vueI18n: {
-          fallbackLocale: 'en',
-        },
-        detectBrowserLanguage: {
-          useCookie: true,
-          cookieKey: 'i18n_redirected',
-          alwaysRedirect: true
-        },
-        langDir: 'static/lang/'
-      }
-    ]
+    '@nuxtjs/i18n',
   ],
+  i18n: {
+    locales: languages,
+    defaultLocale: 'en',
+    vueI18n: {
+      fallbackLocale: 'en',
+    },
+    redirectCookieKey: 'redirected',
+    useRedirectCookie: true,
+    strategy: 'prefix',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieCrossOrigin: true
+    },
+    langDir: 'static/lang/'
+  },
   /*
   ** vuetify module configuration
   ** https://github.com/nuxt-community/vuetify-module
@@ -167,7 +162,9 @@ module.exports = {
               window.removeEventListener('scroll', f)
             }
           }
-          window.addEventListener('scroll', f)
+          if (window !== 'undefined') {
+            window.addEventListener('scroll', f)
+          }
         }
       }
     }
