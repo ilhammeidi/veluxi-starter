@@ -156,16 +156,6 @@ module.exports = {
         shouldPreload: (file, type) => {
           return ['script', 'style', 'font'].includes(type)
         },
-        scroll: function (el, binding) {
-          let f = function (evt) {
-            if (binding.value(evt, el)) {
-              window.removeEventListener('scroll', f)
-            }
-          }
-          if (window !== 'undefined') {
-            window.addEventListener('scroll', f)
-          }
-        }
       }
     }
   },
@@ -184,7 +174,7 @@ module.exports = {
     extend (config, ctx) {
       config.plugins.push(
         new FilterWarningsPlugin({
-          exclude: /Critical dependency: the request of a dependency is an expression/
+          exclude: [/Critical dependency: the request of a dependency is an expression/, /Emitted value instead of an instance of Error/]
         })
       );
       //      if (ctx.isDev && ctx.isClient) {
