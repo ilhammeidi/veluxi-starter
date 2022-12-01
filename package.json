@@ -53,7 +53,7 @@
 		"vue-wow": "^1.2.0",
 		"vue-youtube": "^1.4.0",
 		"vue2-touch-events": "^2.0.0",
-		"vuetify": "^2.6.2",
+		"vuetify": "^2.6.10",
 		"webpack-filter-warnings-plugin": "^1.2.1",
 		"webpack-node-externals": "^1.7.2"
 	},
