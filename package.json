@@ -14,8 +14,8 @@
 	"main": "index.js",
 	"private": true,
 	"scripts": {
-		"dev": "NODE_OPTIONS=--openssl-legacy-provider nuxt",
-		"build": "NODE_OPTIONS=--openssl-legacy-provider nuxt build",
+		"dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider nuxt",
+		"build": "cross-env NODE_OPTIONS=--openssl-legacy-provider nuxt build",
 		"start": "nuxt start",
 		"heroku-postbuild": "npm run build",
 		"generate": "NODE_OPTIONS=--openssl-legacy-provider nuxt generate",
