@@ -1,33 +1,37 @@
 <template>
-  <fragment>
-    <v-list dense>
-      <v-list-item
-        v-for="(item, index) in navMenu"
-        :key="index"
-        :href="'#' + item"
-        link
-      >
-        <v-list-item-content>
-          <v-list-item-title class="menu-list">
-            {{ item }}
-          </v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
-    </v-list>
-    <v-divider />
-    <v-list dense>
-      <v-list-item
-        v-for="(item, index) in ['Login', 'Register', 'Contact']"
-        :key="index"
-        :href="'/' + item"
-        link
-      >
-        <v-list-item-content>
-          <v-list-item-title class="menu-list">{{ item }}</v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
-    </v-list>
-  </fragment>
+  <div class="mobile-nav">
+    <div class="menu">
+      <v-list dense>
+        <v-list-item
+          v-for="(item, index) in dataMenu"
+          :key="index"
+          :href="'#' + item"
+          link
+        >
+          <div>
+            <v-list-item-title class="menu-list">
+              {{ $t('starter.header_'+item) }}
+            </v-list-item-title>
+          </div>
+        </v-list-item>
+      </v-list>
+      <v-divider />
+      <v-list dense>
+        <v-list-item
+          v-for="(item, index) in ['login', 'register']"
+          :key="index"
+          href="#"
+          link
+        >
+          <div>
+            <v-list-item-title class="menu-list">
+              {{ $t('common.header_'+item) }}
+            </v-list-item-title>
+          </div>
+        </v-list-item>
+      </v-list>
+    </div>
+  </div>
 </template>
 
 <style scoped lang="scss">
@@ -35,14 +39,13 @@
 </style>
 
 <script>
-import navMenu from './menu'
+import navMenu from './menu';
 
 export default {
   data() {
     return {
-      navMenu: navMenu,
-      isOpen: false
-    }
-  }
-}
+      dataMenu: navMenu,
+    };
+  },
+};
 </script>

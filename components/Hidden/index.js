@@ -1,1 +1,1 @@
-export { default } from './Hidden'
+export { default } from './Hidden';

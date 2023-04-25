@@ -1,38 +1,45 @@
 <template>
-  <mq-layout :mq="breakpoints">
-    <slot />
-  </mq-layout>
+  <client-only>
+    <MqResponsive :target="breakpoints">
+      <slot />
+    </MqResponsive>
+  </client-only>
 </template>
 
 <script>
+import { MqResponsive } from 'vue3-mq';
+
 export default {
+  components: {
+    MqResponsive,
+  },
   props: {
     point: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   computed: {
     breakpoints() {
       switch (this.point) {
         case 'smUp':
-          return ['xsDown']
+          return ['xs'];
         case 'mdUp':
-          return ['xsDown', 'smDown']
+          return ['xs', 'sm'];
         case 'lgUp':
-          return ['xsDown', 'smDown', 'mdDown']
+          return ['xs', 'sm', 'md'];
         case 'xsDown':
-          return ['smDown', 'mdDown', 'lgDown', 'xl']
+          return ['sm', 'md', 'lg', 'xl'];
         case 'smDown':
-          return ['mdDown', 'lgDown', 'xl']
+          return ['md', 'lg', 'xl'];
         case 'mdDown':
-          return ['lgDown', 'xl']
+          return ['lg', 'xl'];
         case 'lgDown':
-          return 'xl'
+          return 'xl';
         default:
-          return 'xl'
+          return 'xl';
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>

@@ -1,12 +1,12 @@
 <template>
   <div class="parallax-wrap">
     <v-container>
-      <div class="banner-parallax-wrap" v-if="loaded">
+      <div v-if="loaded" class="banner-parallax-wrap">
         <div class="figure">
           <div>
-            <parallax
-              :speed-factor="0.2"
-              direction="down"
+            <scroll-parallax
+              :speed="0.2"
+              direction="y"
             >
               <svg
                 width="845px"
@@ -15,14 +15,14 @@
               >
                 <use xlink:href="/images/decoration/dot-deco.svg#dot" />
               </svg>
-            </parallax>
+            </scroll-parallax>
           </div>
         </div>
         <div class="figure">
           <div>
-            <parallax
-              :speed-factor="0.25"
-              direction="down"
+            <scroll-parallax
+              :speed="0.25"
+              direction="y"
             >
               <svg
                 width="902px"
@@ -31,14 +31,14 @@
               >
                 <use xlink:href="/images/decoration/triangle-deco.svg#triangle" />
               </svg>
-            </parallax>
+            </scroll-parallax>
           </div>
         </div>
         <div class="figure">
           <div>
-            <parallax
-              :speed-factor="0.2"
-              direction="down"
+            <scroll-parallax
+              :speed="0.2"
+              direction="y"
             >
               <svg
                 width="600px"
@@ -47,7 +47,7 @@
               >
                 <use xlink:href="/images/decoration/circle-deco.svg#circle" />
               </svg>
-            </parallax>
+            </scroll-parallax>
           </div>
         </div>
       </div>
@@ -60,16 +60,12 @@
 </style>
 
 <script>
-import Parallax from 'vue-parallaxy'
 export default {
-  components: {
-    Parallax
-  },
   data: () => ({
-    loaded: false
+    loaded: false,
   }),
   mounted() {
-    this.loaded = true
-  }
-}
+    this.loaded = true;
+  },
+};
 </script>

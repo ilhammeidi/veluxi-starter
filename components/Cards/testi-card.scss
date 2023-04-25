@@ -1,0 +1,23 @@
+.card {
+  padding: $spacing3;
+  &-pricing {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin-bottom: $spacing2;
+  }
+}
+.name {
+  display: flex;
+  margin-top: $spacing1;
+  align-items: center;
+  span {
+    display: inline-block;
+    @include margin-left($spacing1)
+  }
+}
+
+.avatar {
+  width: 30px;
+  height: 30px
+}

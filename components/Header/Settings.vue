@@ -1,82 +1,70 @@
 <template>
   <v-menu
     v-model="open"
-    :close-on-content-click="closeOnContentClick"
-    transition="slide-y-transition"
-    offset-y
-    nudge-top="-6"
-    bottom
-    class="menu-setting"
+    :close-on-content-click="false"
+    location="bottom"
+    class="ma-0"
   >
-    <template v-slot:activator="{ on }">
+    <template #activator="{ props }">
       <div class="setting">
         <v-btn
-          fab
-          text
-          small
-          v-on="on"
-          class="ma-3"
-        >
-          <v-icon
-            :class="{ invert: invert, active: open }"
-            class="icon"
-          >
-            settings
-          </v-icon>
-        </v-btn>
+          :class="{ invert: invert, active: open }"
+          v-bind="props"
+          icon="mdi-cog"
+        />
       </div>
     </template>
-    <div class="popover violeta-var">
-      <v-list class="mode-menu">
-        <v-subheader>{{ $t('starter.header_theme') }}</v-subheader>
+    <v-list class="popover ocean-var">
+      <div class="mode-menu">
+        <v-list-subheader>{{ $t('common.header_theme') }}</v-list-subheader>
         <v-list-item>
-          <v-list-item-content>
-            <div class="flex-menu">
-              <label>
-                {{ $t('starter.header_light') }}
-              </label>
-              <v-switch
-                v-model="dark"
-                label=""
-                class="switch-toggle"
-                color="primary"
-                @change="setDark()"
-              />
-              <label>
-                {{ $t('starter.header_dark') }}
-              </label>
-            </div>
-          </v-list-item-content>
+          <div class="flex-menu">
+            <span>
+              {{ $t('common.header_light') }}
+            </span>
+            <v-switch
+              :model-value="isDark"
+              class="switch-toggle"
+              hide-details
+              color="secondary"
+              @change="switchDark()"
+            />
+            <span>
+              {{ $t('common.header_dark') }}
+            </span>
+          </div>
         </v-list-item>
-      </v-list>
+      </div>
       <v-divider />
-      <v-list class="lang-menu">
-        <v-subheader>{{ $t('starter.header_language') }}</v-subheader>
+      <div class="lang-menu">
+        <v-list-subheader>{{ $t('common.header_language') }}</v-list-subheader>
         <v-list-item
-          v-for="locale in $i18n.locales"
-          :key="locale.code"
-          class="lang-list"
-          @click="switchLang(locale.code)"
+          v-for="(lang, index) in langList"
+          :key="index"
+          :value="lang.code"
+          :to="switchLocalePath(lang.code)"
+          @click="switchLang(lang.code)"
+          nuxt
         >
-          <v-list-item-avatar class="flag">
-            <i :class="locale.code" />
-          </v-list-item-avatar>
-          <v-list-item-content>
-            <v-list-item-title class="lang-opt">
-              {{ $t('common.'+locale.code) }}
-            </v-list-item-title>
-          </v-list-item-content>
-          <v-list-item-action>
+          <template #prepend>
+            <v-avatar class="flag">
+              <i :class="lang.code" />
+            </v-avatar>
+          </template>
+          <v-list-item-title class="lang-opt">
+            {{ $t('common.'+lang.code) }}
+          </v-list-item-title>
+          <template #append>
             <v-icon
-              v-if="locale.code === $i18n.locale"
+              v-if="lang.code === curLang"
               color="primary"
             >
               mdi-check
             </v-icon>
-          </v-list-item-action>
+          </template>
         </v-list-item>
-      </v-list>
-    </div>
+      </div>
+    </v-list>
   </v-menu>
 </template>
 
@@ -85,43 +73,66 @@
 </style>
 
 <script>
-import { mapGetters, mapState } from 'vuex'
-
-let darkMode = 'false'
-if (typeof Storage !== 'undefined') { // eslint-disable-line
-  darkMode = localStorage.getItem('luxiDarkMode') || 'false'
-}
+import { ref, onMounted } from 'vue';
+import { useI18n } from 'vue-i18n';
+import { useSwitchLocalePath } from 'vue-i18n-routing';
+import { toggleDark, setRtl } from '@/composables/uiTheme';
 
 export default {
   props: {
     invert: {
       type: Boolean,
-      default: false
+      default: false,
+    },
+  },
+  setup() {
+    const isDark = ref(false);
+    const i18n = useI18n();
+    const isLoaded = ref(false);
+    const curLang = i18n.locale.value;
+
+    const switchLocalePath = useSwitchLocalePath();
+
+    onMounted(() => {
+      isLoaded.value = true;
+      isDark.value = localStorage.getItem('luxiDarkMode') === 'dark';
+    });
+
+    function switchDark() {
+      isDark.value = !isDark.value;
+      toggleDark();
     }
+
+    function switchLang(locale) {
+      // i18n.setLocale(locale);
+      // Set RTL and Document attr
+      document.documentElement.setAttribute('lang', locale);
+
+      if (locale === 'ar') {
+        setRtl(true);
+        document.documentElement.setAttribute('dir', 'rtl');
+      } else {
+        setRtl(false);
+        document.documentElement.setAttribute('dir', 'ltr');
+      }
+    }
+
+    return {
+      isLoaded,
+      isDark,
+      curLang,
+      switchDark,
+      switchLang,
+      switchLocalePath,
+    };
   },
   data: () => ({
-    dark: darkMode === 'true',
-    rtl: false,
     open: false,
-    closeOnContentClick: false
   }),
   computed: {
-    ...mapState(['counter', 'darkMode']),
-    ...mapGetters(['getDir'])
+    langList() {
+      return this.$i18n.locales;
+    },
   },
-  methods: {
-    switchLang: function(val) {
-      this.$i18n.setLocale(val)
-    },
-    setDark: function() {
-      console.log(this.dark)
-      localStorage.setItem('luxiDarkMode', this.dark)
-      this.$vuetify.theme.dark = this.dark
-    },
-    setDirection: function() {
-      this.$vuetify.rtl = this.rtl
-      document.dir = this.rtl ? 'rtl' : 'ltr'
-    }
-  }
-}
+};
 </script>

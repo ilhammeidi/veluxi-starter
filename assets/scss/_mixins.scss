@@ -1,0 +1,450 @@
+/* Margin left and right */
+@mixin margin-left($val) {
+  @include rtl-sass-margin-left($val);
+}
+
+@mixin margin-right($val) {
+  @include rtl-sass-margin-right($val);
+}
+
+/* Padding left and right */
+@mixin padding-left($val) {
+  @include rtl-sass-padding-left($val);
+}
+
+@mixin padding-right($val) {
+  @include rtl-sass-padding-right($val);
+}
+
+/* Position left and right */
+
+@mixin left($val) {
+  @include rtl-sass-left($val);
+}
+
+@mixin right($val) {
+  @include rtl-sass-right($val);
+}
+
+/* Float */
+
+@mixin float($val) {
+  @include rtl-sass-float($val);
+}
+
+/* Text align */
+
+@mixin text-align($val) {
+  @include rtl-sass-text-align($val);
+}
+
+/* Border */
+@mixin border-left($val) {
+  @include rtl-sass-border-left($val);
+}
+
+@mixin border-right($val) {
+  @include rtl-sass-border-right($val);
+}
+
+/* Text color palette */
+@mixin palette-text-primary {
+  .v-theme--light & {
+    color: $light-text-primary
+  }
+  .v-theme--dark & {
+    color: $dark-text-primary
+  }
+}
+
+@mixin palette-text-secondary {
+  .v-theme--light & {
+    color: $light-text-secondary
+  }
+  .v-theme--dark & {
+    color: $dark-text-secondary
+  }
+}
+
+@mixin palette-text-disabled {
+  .v-theme--light & {
+    color: $light-text-disabled
+  }
+  .v-theme--dark & {
+    color: $dark-text-disabled
+  }
+}
+
+@mixin palette-text-hint {
+  .v-theme--light & {
+    color: $light-text-hint
+  }
+  .v-theme--dark & {
+    color: $dark-text-hint
+  }
+}
+
+/* Divider color palette */
+@mixin palette-divider {
+  .v-theme--light & {
+    border-color: $light-divider
+  }
+  .v-theme--dark & {
+    border-color: $dark-divider
+  }
+}
+
+/* Background color palette */
+@mixin palette-background-paper {
+  .v-theme--light & {
+    background-color: $light-background-paper
+  }
+  .v-theme--dark & {
+    background-color: $dark-background-paper
+  }
+}
+
+@mixin palette-background-default {
+  .v-theme--light & {
+    background-color: $light-background-default
+  }
+  .v-theme--dark & {
+    background-color: $dark-background-default
+  }
+}
+
+@mixin palette-background-grey {
+  .v-theme--light & {
+    background-color: material-color('grey', '100')
+  }
+  .v-theme--dark & {
+    background-color: material-color('grey', '800')
+  }
+}
+
+@mixin palette-background-text-primary {
+  .v-theme--light & {
+    background-color: $light-text-primary
+  }
+  .v-theme--dark & {
+    background-color: $dark-text-secondary
+  }
+}
+
+@mixin palette-background-text-secondary {
+  .v-theme--light & {
+    background-color: $light-text-secondary
+  }
+  .v-theme--dark & {
+    background-color: $dark-text-secondary
+  }
+}
+
+@mixin bg-color-fade($color, $opacity) {
+  position: relative;
+  &:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $color;
+    opacity: $opacity;
+  }
+}
+
+@mixin bg-color-lighten($color, $opacity) {
+  background-color: $color;
+  position: relative;
+  &:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $palette-common-white;
+    opacity: $opacity;
+  }
+}
+
+@mixin bg-color-darken($color, $opacity) {
+  background-color: $color;
+  position: relative;
+  &:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $palette-common-black;
+    opacity: $opacity;
+  }
+}
+
+@mixin fill-color-fade($color, $opacity) {
+  fill: $color;
+  opacity: $opacity;
+}
+
+/* 
+** Custom property dark and ligth mode
+*/
+@mixin use-theme($property, $light, $dark) {
+  .v-theme--light & {
+    #{$property}: $light
+  }
+  .v-theme--dark & {
+    #{$property}: $dark
+  }
+}
+
+@mixin use-rtl($property, $value) {
+  .v-locale--is-rtl & {
+    #{$property}: $value
+  }
+}
+
+@mixin rtl-flip {
+  .v-locale--is-rtl & {
+    transform: scale(-1)
+  }
+}
+
+/* Custom shadows */
+@mixin shade {
+  .v-theme--dark & {
+    box-shadow: 0px 1px 3px 0px rgba(64, 64, 64, 1), 0px 1px 1px 0px rgba(42, 42, 42, 1), 0px 2px 1px -1px rgba(20, 20, 20, 1)
+  }
+  .v-theme--light & {
+    box-shadow: 0 1.5px 12px 2px rgba(0, 0, 0, 0.06);
+  }
+}
+
+@mixin shadow1 {
+  box-shadow: none
+}
+
+@mixin shadow2 {
+  .v-theme--dark & {
+    box-shadow: 0px 1px 3px 0px rgba(50,50,50, 0.2),0px 1px 1px 0px rgba(50,50,50, 0.14),0px 2px 1px -1px rgba(50,50,50, 0.12)
+  }
+  .v-theme--light & {
+    box-shadow: 0px 1px 3px 0px rgba(128,128,128, 0.2),0px 1px 1px 0px rgba(128,128,128, 0.14),0px 2px 1px -1px rgba(128,128,128, 0.12)
+  }
+}
+
+@mixin shadow3 {
+  .v-theme--dark & {
+    box-shadow: 0px 1px 5px 0px rgba(50,50,50, 0.2),0px 2px 2px 0px rgba(50,50,50, 0.14),0px 3px 1px -2px rgba(50,50,50, 0.12)
+  }
+  .v-theme--light & {
+    box-shadow: 0px 1px 5px 0px rgba(128,128,128, 0.2),0px 2px 2px 0px rgba(128,128,128, 0.14),0px 3px 1px -2px rgba(128,128,128, 0.12)
+  }
+}
+
+@mixin shadow4 {
+  .v-theme--dark & {
+    box-shadow: 0px 1px 8px 0px rgba(50,50,50, 0.2),0px 3px 4px 0px rgba(50,50,50, 0.14),0px 3px 3px -2px rgba(50,50,50, 0.12)
+  }
+  .v-theme--light & {
+    box-shadow: 0px 1px 5px 0px rgba(128,128,128, 0.2),0px 2px 2px 0px rgba(128,128,128, 0.14),0px 3px 1px -2px rgba(128,128,128, 0.12)
+  }
+}
+
+@mixin shadow5 {
+  .v-theme--dark & {
+    box-shadow: 0px 2px 4px -1px rgba(50,50,50, 0.2),0px 4px 5px 0px rgba(50,50,50, 0.14),0px 1px 10px 0px rgba(50,50,50, 0.12)
+  }
+  .v-theme--light & {
+    box-shadow: 0px 2px 4px -1px rgba(128,128,128, 0.2),0px 4px 5px 0px rgba(128,128,128, 0.14),0px 1px 10px 0px rgba(128,128,128, 0.12)
+  }
+}
+
+@mixin shadow6 {
+  .v-theme--dark & {
+    box-shadow: 0px 3px 5px -1px rgba(50,50,50, 0.2),0px 5px 8px 0px rgba(50,50,50, 0.14),0px 1px 14px 0px rgba(50,50,50, 0.12)
+  }
+  .v-theme--light & {
+    box-shadow: 0px 3px 5px -1px rgba(128,128,128, 0.2),0px 5px 8px 0px rgba(128,128,128, 0.14),0px 1px 14px 0px rgba(128,128,128, 0.12)
+  }
+}
+
+@mixin shadow7 {
+  .v-theme--dark & {
+    box-shadow: 0px 3px 5px -1px rgba(50,50,50, 0.2),0px 6px 10px 0px rgba(50,50,50, 0.14),0px 1px 18px 0px rgba(50,50,50, 0.12)
+  }
+  .v-theme--light & {
+    box-shadow: 0px 3px 5px -1px rgba(128,128,128, 0.2),0px 6px 10px 0px rgba(128,128,128, 0.14),0px 1px 18px 0px rgba(128,128,128, 0.12)
+  }
+}
+
+@mixin shadow8 {
+  .v-theme--dark & {
+    box-shadow: 0px 4px 5px -2px rgba(50,50,50, 0.2),0px 7px 10px 1px rgba(50,50,50, 0.14),0px 2px 16px 1px rgba(50,50,50, 0.12)
+  }
+  .v-theme--light & {
+    box-shadow: 0px 4px 5px -2px rgba(128,128,128, 0.2),0px 7px 10px 1px rgba(128,128,128, 0.14),0px 2px 16px 1px rgba(128,128,128, 0.12)
+  }
+}
+
+@mixin shadow9 {
+  .v-theme--dark & {
+    box-shadow: 0px 5px 5px -3px rgba(50,50,50, 0.2),0px 8px 10px 1px rgba(50,50,50, 0.14),0px 3px 14px 2px rgba(50,50,50, 0.12)
+  }
+  .v-theme--light & {
+    box-shadow: 0px 5px 5px -3px rgba(128,128,128, 0.2),0px 8px 10px 1px rgba(128,128,128, 0.14),0px 3px 14px 2px rgba(128,128,128, 0.12)
+  }
+}
+
+@mixin shadow10 {
+  .v-theme--light & {
+    box-shadow: 0px 5px 6px -3px rgba(50,50,50, 0.2),0px 9px 12px 1px rgba(50,50,50, 0.14),0px 3px 16px 2px rgba(50,50,50, 0.12)
+  }
+  .v-theme--dark & {
+    box-shadow: 0px 5px 6px -3px rgba(128,128,128, 0.2),0px 9px 12px 1px rgba(128,128,128, 0.14),0px 3px 16px 2px rgba(128,128,128, 0.12)
+  }
+}
+
+@mixin shadow11 {
+  .v-theme--dark & {
+    box-shadow: 0px 6px 6px -3px rgba(50,50,50, 0.2),0px 10px 14px 1px rgba(50,50,50, 0.14),0px 4px 18px 3px rgba(50,50,50, 0.12)
+  }
+  .v-theme--light & {
+    box-shadow: 0px 6px 6px -3px rgba(128,128,128, 0.2),0px 10px 14px 1px rgba(128,128,128, 0.14),0px 4px 18px 3px rgba(128,128,128, 0.12)
+  }
+}
+
+@mixin shadow12 {
+  .v-theme--dark & {
+    box-shadow: 0px 6px 7px -4px rgba(50,50,50, 0.2),0px 11px 15px 1px rgba(50,50,50, 0.14),0px 4px 20px 3px rgba(50,50,50, 0.12)
+  }
+  .v-theme--light & {
+    box-shadow: 0px 6px 7px -4px rgba(128,128,128, 0.2),0px 11px 15px 1px rgba(128,128,128, 0.14),0px 4px 20px 3px rgba(128,128,128, 0.12)
+  }
+}
+
+@mixin shadow13 {
+  .v-theme--dark & {
+    box-shadow: 0px 7px 8px -4px rgba(50,50,50, 0.2),0px 12px 17px 2px rgba(50,50,50, 0.14),0px 5px 22px 4px rgba(50,50,50, 0.12)
+  }
+  .v-theme--light & {
+    box-shadow: 0px 7px 8px -4px rgba(128,128,128, 0.2),0px 12px 17px 2px rgba(128,128,128, 0.14),0px 5px 22px 4px rgba(128,128,128, 0.12)
+  }
+}
+
+@mixin shadow14 {
+  .v-theme--dark & {
+    box-shadow: 0px 7px 8px -4px rgba(50,50,50, 0.2),0px 13px 19px 2px rgba(50,50,50, 0.14),0px 5px 24px 4px rgba(50,50,50, 0.12)
+  }
+  .v-theme--light & {
+    box-shadow: 0px 7px 8px -4px rgba(128,128,128, 0.2),0px 13px 19px 2px rgba(128,128,128, 0.14),0px 5px 24px 4px rgba(128,128,128, 0.12)
+  }
+}
+
+@mixin shadow15 {
+  .v-theme--dark & {
+    box-shadow: 0px 7px 9px -4px rgba(50,50,50, 0.2),0px 14px 21px 2px rgba(50,50,50, 0.14),0px 5px 26px 4px rgba(50,50,50, 0.12)
+  }
+  .v-theme--light & {
+    box-shadow: 0px 7px 9px -4px rgba(128,128,128, 0.2),0px 14px 21px 2px rgba(128,128,128, 0.14),0px 5px 26px 4px rgba(128,128,128, 0.12)
+  }
+}
+
+@mixin shadow16 {
+  .v-theme--dark & {
+    box-shadow: 0px 8px 9px -5px rgba(50,50,50, 0.2),0px 15px 22px 2px rgba(50,50,50, 0.14),0px 6px 28px 5px rgba(50,50,50, 0.12)
+  }
+  .v-theme--light & {
+    box-shadow: 0px 8px 9px -5px rgba(128,128,128, 0.2),0px 15px 22px 2px rgba(128,128,128, 0.14),0px 6px 28px 5px rgba(128,128,128, 0.12)
+  }
+}
+
+@mixin shadow17 {
+  .v-theme--dark & {
+    box-shadow: 0px 8px 10px -5px rgba(50,50,50, 0.2),0px 16px 24px 2px rgba(50,50,50, 0.14),0px 6px 30px 5px rgba(50,50,50, 0.12)
+  }
+  .v-theme--light & {
+    box-shadow: 0px 8px 10px -5px rgba(128,128,128, 0.2),0px 16px 24px 2px rgba(128,128,128, 0.14),0px 6px 30px 5px rgba(128,128,128, 0.12)
+  }
+}
+
+@mixin shadow18  {
+  .v-theme--dark & {
+    box-shadow: 0px 8px 11px -5px rgba(50,50,50, 0.2),0px 17px 26px 2px rgba(50,50,50, 0.14),0px 6px 32px 5px rgba(50,50,50, 0.12)
+  }
+  .v-theme--light & {
+    box-shadow: 0px 8px 11px -5px rgba(128,128,128, 0.2),0px 17px 26px 2px rgba(128,128,128, 0.14),0px 6px 32px 5px rgba(128,128,128, 0.12)
+  }
+}
+
+@mixin shadow19  {
+  .v-theme--dark & {
+    box-shadow: 0px 9px 11px -5px rgba(50,50,50, 0.2),0px 18px 28px 2px rgba(50,50,50, 0.14),0px 7px 34px 6px rgba(50,50,50, 0.12)
+  }
+  .v-theme--light & {
+    box-shadow: 0px 9px 11px -5px rgba(128,128,128, 0.2),0px 18px 28px 2px rgba(128,128,128, 0.14),0px 7px 34px 6px rgba(128,128,128, 0.12)
+  }
+}
+
+@mixin shadow20  {
+  .v-theme--dark & {
+    box-shadow: 0px 9px 12px -6px rgba(50,50,50, 0.2),0px 19px 29px 2px rgba(50,50,50, 0.14),0px 7px 36px 6px rgba(50,50,50, 0.12)
+  }
+  .v-theme--light & {
+    box-shadow: 0px 9px 12px -6px rgba(128,128,128, 0.2),0px 19px 29px 2px rgba(128,128,128, 0.14),0px 7px 36px 6px rgba(128,128,128, 0.12)
+  }
+}
+
+@mixin shadow21 {
+  .v-theme--dark & {
+    box-shadow: 0px 10px 13px -6px rgba(50,50,50, 0.2),0px 20px 31px 3px rgba(50,50,50, 0.14),0px 8px 38px 7px rgba(50,50,50, 0.12)
+  }
+  .v-theme--light & {
+    box-shadow: 0px 10px 13px -6px rgba(128,128,128, 0.2),0px 20px 31px 3px rgba(128,128,128, 0.14),0px 8px 38px 7px rgba(128,128,128, 0.12)
+  }
+}
+
+@mixin shadow22 {
+  .v-theme--dark & {
+    box-shadow: 0px 10px 13px -6px rgba(50,50,50, 0.2),0px 21px 33px 3px rgba(50,50,50, 0.14),0px 8px 40px 7px rgba(50,50,50, 0.12)
+  }
+  .v-theme--light & {
+    box-shadow: 0px 10px 13px -6px rgba(128,128,128, 0.2),0px 21px 33px 3px rgba(128,128,128, 0.14),0px 8px 40px 7px rgba(128,128,128, 0.12)
+  }
+}
+
+@mixin shadow23 {
+  .v-theme--dark & {
+    box-shadow: 0px 10px 14px -6px rgba(50,50,50, 0.2),0px 22px 35px 3px rgba(50,50,50, 0.14),0px 8px 42px 7px rgba(50,50,50, 0.12)
+  }
+  .v-theme--light & {
+    box-shadow: 0px 10px 14px -6px rgba(128,128,128, 0.2),0px 22px 35px 3px rgba(128,128,128, 0.14),0px 8px 42px 7px rgba(128,128,128, 0.12)
+  }
+}
+
+@mixin shadow24 {
+  .v-theme--dark & {
+    box-shadow: 0px 11px 14px -7px rgba(50,50,50, 0.2),0px 23px 36px 3px rgba(50,50,50, 0.14),0px 9px 44px 8px rgba(50,50,50, 0.12)
+  }
+  .v-theme--light & {
+    box-shadow: 0px 11px 14px -7px rgba(128,128,128, 0.2),0px 23px 36px 3px rgba(128,128,128, 0.14),0px 9px 44px 8px rgba(128,128,128, 0.12)
+  }
+}
+
+@mixin shadow25 {
+  .v-theme--dark & {
+    box-shadow: 0px 11px 15px -7px rgba(50,50,50, 0.2),0px 24px 38px 3px rgba(850,50,50 0.14),0px 9px 46px 8px rgba(50,50,50, 0.12)
+  }
+  .v-theme--light & {
+    box-shadow: 0px 11px 15px -7px rgba(128,128,128, 0.2),0px 24px 38px 3px rgba(128,128,128, 0.14),0px 9px 46px 8px rgba(128,128,128, 0.12)
+  }
+}
+
+@mixin rtl-flip {
+  .v-locale--is-rtl & {
+    transform: scaleX(-1)
+  }
+}

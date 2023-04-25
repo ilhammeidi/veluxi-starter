@@ -7,15 +7,15 @@
 </template>
 
 <script>
-import Parallax from './Parallax'
-import MainFeature from './MainFeature'
-import MoreFeature from './MoreFeature'
+import Parallax from './Parallax';
+import MainFeature from './MainFeature';
+import MoreFeature from './MoreFeature';
 
 export default {
   components: {
     'parallax-feature': Parallax,
     MainFeature,
-    MoreFeature
-  }
-}
+    MoreFeature,
+  },
+};
 </script>

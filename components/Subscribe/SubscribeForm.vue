@@ -3,9 +3,11 @@
     <v-row justify="center">
       <v-col md="12" cols="12" class="px-6">
         <v-card class="paper">
-          <h5 class="text-center headline">Subscribe Our Newsletter</h5>
+          <h5 class="text-center text-h5">
+            Subscribe Our Newsletter
+          </h5>
           <v-form class="container">
-            <v-row align="end">
+            <v-row align="center">
               <v-col
                 sm="9"
                 cols="12"
@@ -22,12 +24,14 @@
               >
                 <v-btn
                   color="primary"
-                  class="button"
+                  class="button mt-sm-4"
+                  size="large"
                 >
                   Send
                   <v-icon
                     right
                     dark
+                    class="right-icon"
                   >
                     mdi-send
                   </v-icon>

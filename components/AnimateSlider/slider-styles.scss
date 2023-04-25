@@ -1,7 +1,6 @@
 .slider-content {
   text-align: center;
   .inner {
-    padding: 0 70px;
     box-sizing: border-box;
     position: absolute;
     width: 100%;
@@ -14,6 +13,9 @@
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    @include breakpoints-up(sm) {
+      padding: 0 70px;
+    }
     h1 {
       font-weight: 900;
       margin: 0 auto;
@@ -28,6 +30,9 @@
       line-height: 1.5;
       margin: 20px auto 30px;
       max-width: 640px;
+      @include breakpoints-down(xs) {
+        display: none
+      }
     }
   }
   section {
@@ -101,7 +106,13 @@
 }
 
 .hero-buttons {
-  margin-top: $spacing4
+  margin-top: $spacing4;
+  @include breakpoints-down(xs) {
+    flex-direction: column;
+    & > * {
+      margin-bottom: $spacing4
+    }
+  }
 }
 
 .hero-content {
@@ -224,7 +235,7 @@
   }
 }
 
-.slide-right-enter {
+.slide-right-enter-from {
   transform: translate(100%, 0);
 }
 .slide-left-leave-to {
@@ -233,11 +244,11 @@
 .slide-right-leave-to {
   transform: translate(-100%, 0);
 }
-.slide-left-enter {
+.slide-left-enter-from {
   transform: translate(-100%, 0);
 }
 
-.slide-left-enter,
+.slide-left-enter-from,
 .slide-right-leave-to{
   h1 {
     -webkit-transform: translateY(-20px);
@@ -273,7 +284,7 @@
   }
 }
 
-.slide-right-enter,
+.slide-right-enter-from,
 .slide-left-leave-to{
   h1 {
     transition: all 0.3s ease;

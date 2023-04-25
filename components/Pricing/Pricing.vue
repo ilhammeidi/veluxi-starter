@@ -1,32 +1,29 @@
 <template>
   <v-container>
-    <h3 class="display-2 text-center mb-4">
+    <h3 class="text-h3 text-center mb-4">
       Pricing and Plan
     </h3>
-    <p class="body-1 text-center mb-4">
+    <p class="text-body-1 text-center mb-4">
       Curabitur egestas consequat lorem, vel fermentum augue porta id.
     </p>
     <div class="pricing-wrap">
-      <v-row justify="center">
-        <v-col md="9">
-          <v-row align="end">
-            <v-col
-              v-for="(tier, index) in tiers"
-              :key="index"
-              md="4"
-              sm="tier.title === 'enterpris' ? 12 : 4"
-              class="px-5"
-            >
-              <pricing-card
-                :title="tier.title"
-                :subheader="tier.subheader"
-                :price="tier.price"
-                :description="tier.description"
-                :button-text="tier.buttonText"
-                :button-variant="tier.buttonVariant"
-              />
-            </v-col>
-          </v-row>
+      <v-row align="center">
+        <v-col
+          v-for="(tier, index) in tiers"
+          :key="index"
+          md="3"
+          sm="6"
+          cols="12"
+          class="px-5"
+        >
+          <pricing-card
+            :title="tier.title"
+            :subheader="tier.subheader"
+            :price="tier.price"
+            :description="tier.description"
+            :button-text="tier.buttonText"
+            :button-variant="tier.buttonVariant"
+          />
         </v-col>
       </v-row>
     </div>
@@ -38,11 +35,11 @@
 </style>
 
 <script>
-import PricingCard from '../Cards/PricingCard'
+import PricingCard from '../Cards/PricingCard';
 
 export default {
   components: {
-    PricingCard
+    PricingCard,
   },
   data() {
     return {
@@ -50,14 +47,20 @@ export default {
         {
           title: 'Free',
           price: '0',
-          description: [
-            '10 users included',
-            '2 GB of storage',
-            'Help center access',
-            'Email support'
-          ],
+          description: ['10 users included', '2 GB of storage'],
           buttonText: 'Sign up for free',
-          buttonVariant: 'outlined'
+          buttonVariant: 'outlined',
+        },
+        {
+          title: 'Personal',
+          price: '5',
+          description: [
+            '15 users included',
+            '10 GB of storage',
+            'Help center access',
+          ],
+          buttonText: 'Get started',
+          buttonVariant: 'outlined',
         },
         {
           title: 'Pro',
@@ -67,10 +70,10 @@ export default {
             '20 users included',
             '10 GB of storage',
             'Help center access',
-            'Priority email support'
+            'Priority email support',
           ],
           buttonText: 'Get started',
-          buttonVariant: 'contained'
+          buttonVariant: 'contained',
         },
         {
           title: 'Enterprise',
@@ -79,13 +82,13 @@ export default {
             '50 users included',
             '30 GB of storage',
             'Help center access',
-            'Phone & email support'
+            'Phone & email support',
           ],
           buttonText: 'Contact us',
-          buttonVariant: 'outlined'
-        }
-      ]
-    }
-  }
-}
+          buttonVariant: 'outlined',
+        },
+      ],
+    };
+  },
+};
 </script>

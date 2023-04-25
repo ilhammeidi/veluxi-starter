@@ -21,7 +21,7 @@
 </template>
 
 <style scoped lang="scss">
-@import './card-styles';
+@import './testi-card';
 </style>
 
 <script>
@@ -29,16 +29,16 @@ export default {
   props: {
     text: {
       type: String,
-      required: true
+      required: true,
     },
     avatar: {
       type: String,
-      required: true
+      required: true,
     },
     name: {
       type: String,
-      required: true
-    }
-  }
-}
+      required: true,
+    },
+  },
+};
 </script>

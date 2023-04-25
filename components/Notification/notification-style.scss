@@ -4,7 +4,7 @@
   @include breakpoints-up(lg) {
     width: 80%
   }
-  ::v-deep .v-snack__wrapper {
+  :deep(.v-snackbar__wrapper) {
     width: 100%;
     margin-bottom: $spacing2;
     max-width: none;

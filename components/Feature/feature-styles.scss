@@ -34,8 +34,11 @@
 
 .feature-more {
   position: relative;
+  .v-container .v-row {
+    margin-bottom: $spacing20;
+  }
   .title-app {
-    margin-Bottom: $spacing3
+    margin-bottom: $spacing3
   }
   .text {
     font-size: 22px
@@ -44,6 +47,13 @@
     position: relative;
     width: 400px;
     max-width: 98%;
+    @include breakpoints-down(sm) {
+      max-width: 800px;
+      width: auto;
+      text-align: center;
+      margin: 0 auto;
+      margin-top: $spacing5;
+    }
     img {
       width: 100%
     }
@@ -62,8 +72,7 @@
 
 .feature-item {
   position: relative;
-  margin-bottom: $spacing20;
-  @include breakpoints-down(xs) {
+  @include breakpoints-down(sm) {
     text-align: center;
   }
   &.last {
@@ -130,10 +139,10 @@
   height: 1099px;
   opacity: 0.4;
   @include left(-370px);
-  .theme--light & {
+  .v-theme--light & {
     fill: $light-text-hint;
   }
-  .theme--dark & {
+  .v-theme--dark & {
     fill: $dark-text-hint;
   }
 }

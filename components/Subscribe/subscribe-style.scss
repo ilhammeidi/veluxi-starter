@@ -13,5 +13,12 @@
   position: relative;
 }
 .right-icon {
-  @include margin-left($spacing1)
+  @include margin-left($spacing1);
+  @include use-rtl(transform, scale(-1))
+}
+
+.button {
+  @include breakpoints-down(xs) {
+    width: 100%
+  }
 }

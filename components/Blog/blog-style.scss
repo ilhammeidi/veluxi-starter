@@ -1,0 +1,100 @@
+.blog-headline {
+  cursor: pointer;
+}
+
+a.anchor-content {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: $spacing2;
+  @include breakpoints-up(md) {
+    padding: $spacing8;  
+  }
+}
+
+.headline-title {
+  font-weight: $font-medium;
+  margin-bottom: $spacing4
+}
+
+.title-blog {
+  font-weight: $font-medium
+}
+
+.image-blog {
+  margin: spacing(5, 0);
+  img {
+    width: 100%
+  }
+}
+
+.blog-content {
+  @include breakpoints-down(xs) {
+    margin-top: $spacing2
+  }
+  ul, ol {
+    margin-bottom: $spacing2
+  }
+}
+
+.list {
+  list-style: disc
+}
+
+.share-socmed {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  @include palette-divider;
+  padding: spacing(3, 0);
+  margin: spacing(3, 0);
+  :deep(.v-btn) {
+    border-width: 2px;
+    @include margin-right($spacing2)
+  }
+}
+
+.facebook {
+  border-color: #0D47A1;
+  :deep(.v-icon) {
+    color: #0D47A1;
+  }
+}
+
+.twitter {
+  border-color: #00BCD4;
+  :deep(.v-icon) {
+    color: #00BCD4;
+  }
+}
+
+.linkedin {
+  border-color: #2196F3;
+  :deep(.v-icon) {
+    color: #2196F3;
+  }
+}
+
+.subtitle {
+  font-weight: $font-bold;
+  margin-bottom: $spacing3;
+  @include use-theme(color, $palette-primary-dark, $palette-primary-light);
+}
+
+.gallery-item {
+  padding: 2px;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  padding: spacing(0, 2)
+}
+
+.input {
+  flex: 1;
+  
+}
+
+.send {
+  @include margin-left($spacing2);
+}

@@ -1,0 +1,185 @@
+/* General */
+
+.post-card {
+  display: flex;
+  border-radius: $rounded-medium
+}
+
+.title {
+  @include breakpoints-up(md) {
+    font-size: 24px !important;
+  }
+}
+
+.properties {
+  padding: $spacing2;
+  max-width: 100%;
+  & > div {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.figure {
+  display: block;
+  position: relative;
+}
+
+.head-line {
+  text-transform: uppercase;
+  color: $palette-primary-main;
+  padding-bottom: 0;
+}
+
+.news-title {
+  line-height: 1.5
+}
+
+.post-title {
+  padding: spacing(0, 2)
+}
+
+.desc {
+  white-space: initial;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  display: flex;
+  display: -webkit-box;
+  height: 65px;
+  overflow: hidden;
+  margin: $spacing2 0;
+  padding: 0;
+  font-size: 18px;
+}
+
+/* Orientation */
+
+.portrait {
+  flex-direction: column;
+  .properties {
+    padding-left: $spacing2;
+    padding-right: $spacing2;
+  }
+}
+
+.landscape {
+  flex-direction: row;
+  .figure {
+    min-width: 100px;
+    max-width: 200px;
+    @include breakpoints-down(xs) {
+      max-width: 100px;
+      max-height: 130px;
+    }
+    @include margin-right($spacing2);
+    & > div {
+      height: 100% !important;
+    }
+  }
+  .desc {
+    @include breakpoints-down(xs) {
+      display: none;
+    }
+  }
+  .properties {
+    @include breakpoints-down(xs) {
+      padding: $spacing1;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      :deep(.v-card__subtitle) {
+        padding: 0
+      }
+    }
+  }
+  .v-btn--text {
+    margin-left: $spacing1 * -1
+  }
+  .v-btn.action-btn:not(.v-btn--text) {
+    @include breakpoints-down(md) {
+      min-width: 0;
+    }
+  }
+  .news-title {
+    @include breakpoints-down(xs) {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      display: block;
+      padding: 0;
+    }
+  }
+}
+
+/* Type */
+
+.full { 
+  overflow: hidden;
+  position: relative;
+}
+
+.round {
+  .figure {
+    margin: $spacing2;
+    overflow: hidden;
+    border-radius: $rounded-medium
+  }
+  &.landscape {
+    .figure {
+      @include breakpoints-down(xs) {
+        margin: $spacing1;
+      }
+    }
+  }
+}
+
+.oval {
+  overflow: hidden;
+  &.portrait {
+    .figure {
+      height: 250px;
+      width: 120%;
+      margin-left: -10%;
+      overflow: hidden;
+      border-radius: 0 0 50% 50%;
+      & > div {
+        overflow: visible;
+        height: auto !important;
+      }
+    }
+  }
+  &.landscape {
+    .figure {
+      overflow: hidden;
+      & > div {
+        border-radius: 0 50% 50% 0 !important;
+        height: 120% !important;
+        margin-top: -10%;
+      }
+    }
+  }
+}
+
+.over {
+  &.portrait {
+    margin-top: $spacing2;
+    .figure {
+      overflow: hidden;
+      @include shade;
+      margin: spacing(-2, 2, 0);
+      border-radius: $rounded-medium;
+    }
+  }
+  &.landscape {
+    @include margin-left($spacing2);
+    .figure {
+      height: 210px;
+      overflow: hidden;
+      @include shade;
+      margin: spacing(2, 0);
+      @include margin-left($spacing2 * -1);
+      border-radius: $rounded-medium;
+    }
+  }
+}

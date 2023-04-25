@@ -1,1 +1,1 @@
-export { default } from './AnimateSlider'
+export { default } from './AnimateSlider';

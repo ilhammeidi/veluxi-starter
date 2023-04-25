@@ -7,7 +7,7 @@ $flag: '/images/flag-logo.png';
   display: inline-block;
   position: relative;
   @include margin-right(5px);
-  top: 1;
+  top: 1px;
   background: url($flag) no-repeat transparent;
   background-size: 16px auto;
   &.ar {
@@ -39,46 +39,97 @@ $flag: '/images/flag-logo.png';
 }
 
 .switch-toggle {
-  margin-top: 0;
-  ::v-deep .v-input--switch__thumb {
-    color: var(--v-secondary-base);
+  margin: spacing(-4, 2, 0);
+  height: 24px;
+  :deep(.v-switch__thumb) {
+    color: $palette-secondary-main
+  }
+  :deep(.v-switch__track) {
+    background-color: $palette-secondary-light
+  }
+  :deep(.v-selection-control) {
+    justify-content: center;
   }
 }
 
-.header.v-sheet.v-app-bar {
+.flex-menu {
+  display: flex;
+  align-items: center;
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(-100px)
+  }
+  to {
+    opacity: 1;
+    transform: none
+  }
+}
+
+.header.v-app-bar.v-toolbar {
+  background-color: transparent;
   @include palette-text-primary;
-  @include palette-background-paper;
+  z-index: 9999 !important;
   box-shadow: none;
   transition: all 0.3s ease;
-  .v-toolbar__content {
-    .container {
-      #main-wrap & {
-        padding: 0;
-        @include breakpoints-up(md) {
-          padding: 0 $spacing3
-        }
+  position: fixed;
+  padding: spacing(1, 0);
+  @include breakpoints-down(md) {
+    z-index: 90
+  }
+  .container {
+    #main-wrap & {
+      @include breakpoints-down(sm) {
+        padding: 0
       }
     }
+  }
+  nav {
+    transition: all 0.5s ease-out;
   }
   &.fixed {
     position: fixed;
     top: 0;
-    @include shadow4;
+    height: auto !important;
+    padding: 4px 0;
+    @include shadow5;
     @include palette-background-paper;
-    .vertical-divider {
-      min-height: $spacing3;
-    }
     .logo {
+      a {
+        @include palette-text-primary
+      }
       img {
         height: 32px;
         width: 32px
       }
     }
+    .bar {
+      @include breakpoints-down(sm) {
+        @include palette-background-text-secondary;
+        &:after, &:before {
+          @include palette-background-text-secondary;
+        }
+      }
+    }
     nav {
-      padding: spacing(1, 0);
+      ul li a {
+        @include palette-text-primary
+      }
+    }
+    .icon {
+      @include palette-text-secondary
     }
   }
-
+  &.open-drawer {
+    box-shadow: none !important;
+    .logo {
+      a {
+        @include palette-text-primary
+      }
+    }
+  }
 }
 
 .v-toolbar__content, .v-toolbar__extension {
@@ -89,72 +140,153 @@ $flag: '/images/flag-logo.png';
   display: flex;
   align-items: center;
   justify-content: space-between;
-  & nav {
-    transition: all 0.3s ease;
-    align-items: center;
-    padding: $spacing1;
-    margin: 3px 0;
-    display: flex;
-    & > * {
-      margin: 0 $spacing1
+  padding: spacing(1, 2);
+  .nav-menu {
+    width: 100%;
+    .main-menu {
+      flex: 1
     }
-    .menu-setting {
-      margin: 0;
+  }
+  & nav {
+    align-items: center;
+    display: flex;
+  }
+}
+
+.v-application .v-application--wrap .logo {
+  a {
+    @include breakpoints-down('sm') {
+      color: $palette-common-white
     }
   }
 }
 
 .logo {
-  & a {
+  a {
     text-decoration: none;
-    display: block;
+    display: flex;
+    font-size: 22px;
+    align-items: center;
+    font-weight: 500;
+    @include breakpoints-up('md') {
+      @include palette-text-primary;
+    }
   }
-  & img {
+  img {
     transition: all 0.3s ease;
     max-width: 48px;
-    height: 48px
+    height: 48px;
+    width: 48px;
+    @include margin-right($spacing1);
   }
 }
 
-.nav-menu {
-  .scrollactive-nav {
-    listStyle: none;
-    @include padding-left($spacing5);
-    .v-btn  {
-      margin: 0 $spacing1;
-      list-style: none;
-      position: relative;
-      display: inline-block;
-      padding: 10px 8px;
-      height: auto;
-      @include palette-text-primary;
-      &.active {
-        &:after {
-          content: '';
-          position: absolute;
-          width: 100%;
-          height: 4px;
-          background: $palette-primary-main;
-          bottom: -14px;
-          left: 0;
+.nav-logo {
+  &.invert {
+    .logo a{
+      @include palette-text-primary
+    }
+    .bar {
+      @include breakpoints-down(sm) {
+        @include palette-background-text-secondary;
+        &:after, &:before {
+          @include palette-background-text-secondary;
         }
       }
     }
   }
 }
 
-.user-menu {
-  & > button {
-    margin: 0 $spacing1;
+.nav-menu {
+  > * {
+    margin: 0;
+    @include breakpoints-up(lg) {
+      margin: spacing(0, 1);
+    }
+  }
+  &.invert {
+    ul li a {
+      transition: all 0.3s ease-out;
+      @include palette-text-primary;
+    }
+    .icon.v-icon {
+      @include palette-text-primary;
+    }
+  }
+  .scrollactive-nav {
+    list-style: none;
+    @include padding-left($spacing5);
+    .v-btn  {
+      text-transform: capitalize;
+      font-size: 16px;
+      font-weight: $font-medium;
+      background: none !important;
+      box-shadow: none;
+      position: relative;
+      padding: 6px;
+      margin: spacing(0, 1);
+      margin-top: $spacing1 * 0.5;
+      min-width: 0;
+      &:before {
+        content: '';
+        border-bottom: 3px solid #fff;
+        width: 0%;
+        position: absolute;
+        bottom: 0;
+        @include left(50%);
+        transition: all 0.2s cubic-bezier(0.42, 0.16, 0.21, 0.93);
+      }
+      &:hover {
+        transition: all 0.3s ease-out;
+        background: none;
+        &:after {
+          opacity: 0
+        }
+        &:before {
+          width: 60%;
+          @include left(8px);
+          border-bottom-color: $palette-primary-light
+        }
+      }
+      &.active {
+        &:before {
+          border-bottom-color: $palette-primary-main;
+          width: 60%;
+          @include left(8px);
+        }
+      }
+    }
   }
 }
 
 .lang-menu {
+  text-transform: capitalize;
   .flag {
     margin: 0;
     & i {
       @include flag-icon;
     }
+  }
+  .lang-list {
+    padding: 0;
+    .lang-opt{
+      font-size: 0.875rem;
+      @include margin-left($spacing2)
+    }
+  }
+}
+
+.mode-menu {
+  text-transform: capitalize
+}
+
+.user-menu {
+  @include breakpoints-down(md) {
+    flex: 1;
+    justify-content: flex-end;
+  }
+  & > button {
+    margin: 0 $spacing1;
   }
 }
 
@@ -162,35 +294,34 @@ $flag: '/images/flag-logo.png';
   margin: 0 $spacing1;
   border-left: 1px solid;
   @include palette-divider;
-  height: 100%;
-  min-height: $spacing6
+  min-height: $spacing3;
+  transition: all 0.5s ease-out
 }
 
 .setting {
-  .icon {
+  .icon.v-icon {
+    font-size: 32px;
     transition: all 0.3s ease;
-    @include palette-text-secondary;
+    color: $palette-common-white;
   }
   .active {
     transform: rotate(30deg)
   }
 }
 
-.mode-menu, .lang-menu {
+.title-menu {
   text-transform: capitalize
-}
-
-.flex-menu {
-  display: flex;
-  justify-content: flex-start;
-  label {
-    text-transform: capitalize;
-    padding: $spacing1 $spacing2
-  }
 }
 
 .v-list-item__content {
   padding: 0
+}
+
+paper-nav {
+  width: 100%;
+  @media (min-width: 680px) {
+    width: 300px
+  }
 }
 
 .mobile-menu {
@@ -204,12 +335,32 @@ $flag: '/images/flag-logo.png';
 }
 
 .mobile-nav {
-  width: 240px;
-  @include palette-background-default;
-  padding: spacing(10, 2, 4);
-  z-index: 90
-}
-
-.menu-list {
-  text-transform: capitalize
+  @include palette-background-paper;
+  z-index: 90;
+  min-width: 300px;
+  @include breakpoints-down(xs) {
+    width: 100% !important
+  }
+  .menu {
+    padding: spacing(0, 2);
+    overflow: auto;
+    top: spacing(12);
+    width: 100%;
+    position: absolute;
+    height: calc(100% - 80px);
+    .menu-list {
+      text-transform: capitalize;
+      font-size: 24px;
+      margin-top: 4px;
+      margin-bottom: 4px;
+      font-weight: $font-regular;
+      padding: spacing(1, 0);
+    }
+    &.menu-open {
+      a {
+        animation-name: slideRight;
+        animation-timing-function: ease;
+      }
+    }
+  }
 }
