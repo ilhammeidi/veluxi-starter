@@ -2,19 +2,19 @@
 import colors from 'vuetify/lib/util/colors';
 
 const palette = {
-  ubuntu: {
-    primary: colors.orange.darken3, // primary main
-    primarylight: colors.orange.lighten5, // primary light
-    primarydark: colors.orange.darken4, // primary dark
-    secondary: colors.purple.base, // secondary main
-    secondarylight: colors.purple.lighten5, // secondary light
-    secondarydark: colors.purple.darken2, // secondary dark
-    anchor: colors.orange.base, // link
+  greenNature: {
+    primary: colors.teal.base, // primary main
+    primarylight: colors.teal.lighten5, // primary light
+    primarydark: colors.teal.darken3, // primary dark
+    secondary: colors.lightGreen.darken2, // secondary main
+    secondarylight: colors.lightGreen.lighten5, // secondary light
+    secondarydark: colors.lightGreen.darken4, // secondary dark
+    anchor: colors.teal.base // link
   },
 };
 
 const theme = {
-  ...palette.ubuntu,
+  ...palette.greenNature,
 };
 
 export default theme;

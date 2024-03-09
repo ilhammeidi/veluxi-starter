@@ -33,13 +33,13 @@
             </span>
           </v-btn>
           <div class="logo">
-            <a :href="link.home">
+            <nuxt-link :href="localePath(link.home)">
               <img
                 :src="logo"
                 alt="logo"
                 width="100"
               >
-            </a>
+            </nuxt-link>
           </div>
           <div
             v-if="isDesktop"
@@ -51,11 +51,17 @@
                 :key="index"
               >
                 <v-btn
+                  v-if="!invert"
                   :href="'#' + item.link"
                   :class="{ active: activeMenu === item.link }"
                   class="menu-link"
                   size="small"
                   @click="scrollToMyEl(item.name)"
+                  v-text="$t('starter.header_'+item.name)"
+                />
+                <v-btn
+                  v-if="invert"
+                  :to="localePath('/') + '#' + item.link"
                   v-text="$t('starter.header_'+item.name)"
                 />
               </template>
@@ -95,6 +101,7 @@ import link from '@/assets/text/link';
 import Settings from './Settings';
 import MobileMenu from './MobileMenu';
 import navMenu from './menu';
+import { useLocalePath } from '#imports';
 
 let counter = 0;
 
@@ -113,7 +120,14 @@ export default {
     'mobile-menu': MobileMenu,
     'setting-menu': Settings,
   },
+  props: {
+    invert: {
+      type: Boolean,
+      default: false,
+    },
+  },
   setup() {
+    const localePath = useLocalePath();
     const smoothScroll = inject('smoothScroll');
     function scrollToMyEl(elemId) {
       const myEl = document.getElementById(elemId);
@@ -129,6 +143,7 @@ export default {
 
     return {
       scrollToMyEl,
+      localePath
     };
   },
   data() {

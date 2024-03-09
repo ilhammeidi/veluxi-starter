@@ -72,9 +72,7 @@ export default defineNuxtConfig({
     '@/assets/scss/transition.scss',
     '@/assets/scss/vendors/animate.css',
     '@/assets/scss/vendors/animate-extends.css',
-    '@/assets/scss/vendors/hamburger-menu.css',
-    '@/assets/scss/vendors/slick-carousel/slick.css',
-    '@/assets/scss/vendors/slick-carousel/slick-theme.css'
+    '@/assets/scss/vendors/hamburger-menu.css'
   ],
   modules: [
     '@nuxtjs/i18n',
@@ -91,12 +89,7 @@ export default defineNuxtConfig({
       cookieKey: 'i18n_redirected',
       redirectOn: 'root',  // recommended
     },
-    // vueI18n: './config/i18n.js', // use this options for next vueI18n version
-    vueI18n: {
-      legacy: false,
-      locale: 'en',
-      fallbackLocale: 'en',
-    }
+    vueI18n: './config/i18n.js', // use this options for next vueI18n version
   },
   vite: {
     css: {

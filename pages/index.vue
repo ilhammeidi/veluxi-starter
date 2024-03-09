@@ -1,57 +1,53 @@
 <template>
   <div>
-    <div class="main-wrap">
-      <main-header />
-      <main class="container-wrap scroll-nav-content">
-        <section id="home">
-          <v-container>
-            <animate-slider />
-          </v-container>
-        </section>
-        <section
-          id="feature"
-          class="space-top space-bottom"
-        >
-          <v-container>
-            <feature />
-          </v-container>
-        </section>
-        <div id="counter">
-          <counter dark />
-        </div>
-        <div
-          id="testimonials"
-          class="space-top"
-        >
-          <Testimonials />
-        </div>
-        <div
-          id="pricing"
-          class="space-top"
-        >
-          <pricing />
-        </div>
-        <div
-          id="blog"
-          class="space-top space-bottom"
-        >
-          <blog />
-        </div>
-        <div
-          id="subscribe"
-          class="space-bottom-short"
-        >
-          <subscribe />
-        </div>
-      </main>
+    <main-container nav-scroll>
+      <section id="home">
+        <v-container>
+          <animate-slider />
+        </v-container>
+      </section>
+      <section
+        id="feature"
+        class="space-top space-bottom"
+      >
+        <v-container>
+          <feature />
+        </v-container>
+      </section>
+      <div id="counter">
+        <counter dark />
+      </div>
+      <div
+        id="testimonials"
+        class="space-top"
+      >
+        <Testimonials />
+      </div>
+      <div
+        id="pricing"
+        class="space-top"
+      >
+        <pricing />
+      </div>
+      <div
+        id="blog"
+        class="space-top space-bottom"
+      >
+        <blog />
+      </div>
+      <div
+        id="subscribe"
+        class="space-bottom-short"
+      >
+        <subscribe />
+      </div>
       <hidden point="mdDown">
         <notification />
       </hidden>
       <hidden point="smDown">
         <page-nav />
       </hidden>
-      <main-footer />
-    </div>
+    </main-container>
   </div>
 </template>
 
@@ -75,18 +71,12 @@
 .space-top-short {
   margin-top: section-margin($spacing1 * 0.5);
 }
-.container-wrap {
-  margin-top: $spacing15;
-  & > section {
-    position: relative;
-  }
-}
 </style>
 
 <script>
 import { onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
-import Header from '@/components/Header';
+import MainContainer from '@/components/MainContainer';
 import AnimateSlider from '@/components/AnimateSlider';
 import Feature from '@/components/Feature';
 import Counter from '@/components/Counter';
@@ -97,13 +87,12 @@ import Subscribe from '@/components/Subscribe';
 import PageNav from '@/components/PageNav';
 import Notification from '@/components/Notification';
 import Hidden from '@/components/Hidden';
-import Footer from '@/components/Footer';
 import brand from '@/assets/text/brand';
 import { defineNuxtComponent, useRouter, useCookie } from '#app';
 
 export default defineNuxtComponent({
   components: {
-    'main-header': Header,
+    MainContainer,
     'animate-slider': AnimateSlider,
     Feature,
     Counter,
@@ -114,7 +103,6 @@ export default defineNuxtComponent({
     Notification,
     PageNav,
     Hidden,
-    'main-footer': Footer,
   },
   head() {
     return {
