@@ -1,10 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import eslintPlugin from 'vite-plugin-eslint';
-import languages from './lang/languages'
+import languages from './i18n/locales/languages'
 import theme from './config/theme'
 import brand from './assets/text/brand'
 
 export default defineNuxtConfig({
+  ssr: false,
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
@@ -81,7 +82,6 @@ export default defineNuxtConfig({
   i18n: {
     locales: languages,
     lazy: true,
-    langDir: 'lang',
     defaultLocale: 'en',
     strategy: 'prefix',
     detectBrowserLanguage: {
@@ -89,12 +89,15 @@ export default defineNuxtConfig({
       cookieKey: 'i18n_redirected',
       redirectOn: 'root',  // recommended
     },
-    vueI18n: './config/i18n.js', // use this options for next vueI18n version
+    bundle: {
+      optimizeTranslationDirective: false,
+    },
+    vueI18n: 'i18n.js',
   },
   vite: {
     css: {
       preprocessorOptions: {
-        scss: { additionalData: `@import "@/assets/scss/styles.scss";` } // eslint-disable-line
+        scss: { additionalData: `@use "@/assets/scss/styles.scss" as *;` } // eslint-disable-line
       }
     },
     plugins: [

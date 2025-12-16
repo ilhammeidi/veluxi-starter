@@ -1,3 +1,5 @@
+@use "variables";
+
 /** spacing funcation
 ** Sample 1: margin-left: spacing(5);
 ** Sample 2: @include margin-left(spacing(5));
@@ -5,16 +7,16 @@
 
 @function spacing($top, $right: -1, $bottom: -1, $left: -1) {
   @if ($left > -1) {
-     @return ($top * $unit) ($right * $unit) ($bottom * $unit) ($left * $unit);
+     @return ($top * variables.$unit) ($right * variables.$unit) ($bottom * variables.$unit) ($left * variables.$unit);
   }
   
   @if ($bottom > -1) {
-     @return ($top * $unit) ($right * $unit) ($bottom * $unit) ($right * $unit);
+     @return ($top * variables.$unit) ($right * variables.$unit) ($bottom * variables.$unit) ($right * variables.$unit);
   }
   
   @if ($right > -1) {
-     @return ($top * $unit) ($right * $unit) ($top * $unit) ($right * $unit);
+     @return ($top * variables.$unit) ($right * variables.$unit) ($top * variables.$unit) ($right * variables.$unit);
   }
   
-  @return ($top * $unit)
+  @return ($top * variables.$unit)
 }

@@ -133,13 +133,13 @@
 </template>
 
 <style scoped lang="scss">
-@import './footer';
+@use'./footer';
 </style>
 
 <script>
+import { useSwitchLocalePath } from '#i18n';
 import { ref } from 'vue';
 import { useI18n } from 'vue-i18n';
-import { useSwitchLocalePath } from 'vue-i18n-routing';
 import { setRtl } from '@/composables/uiTheme';
 import brand from '@/assets/text/brand';
 import { navigateTo } from '#app';
@@ -150,16 +150,15 @@ export default {
     Logo,
   },
   setup() {
-    const switchLocalePath = useSwitchLocalePath()
   
     const i18n = useI18n();
     const curLang = i18n.locale.value;
     const lang = ref(curLang);
+    const switchLocalePath = useSwitchLocalePath();
 
-    function switchLang(locale) {
+    function switchLang(locale){
       navigateTo(switchLocalePath(locale));
-      //i18n.setLocale(locale);
-      console.log(switchLocalePath(locale));
+      
       // Set RTL and Document attr
       document.documentElement.setAttribute('lang', locale);
 
@@ -208,10 +207,10 @@ export default {
   computed: {
     langList() {
       const list = [];
-      const i18n = this.$i18n.locales;
+      const i18n = this.$i18n.availableLocales;
 
       i18n.map((locale) => {
-        list.push({ title: this.$t('common.' + locale.code), value: locale.code });
+        list.push({ title: this.$t('common.' + locale), value: locale });
         return false;
       });
       return list;

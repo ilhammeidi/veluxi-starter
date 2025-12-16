@@ -22,7 +22,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import './notification-style.scss';
+@use'./notification-style.scss';
 </style>
 
 <script>

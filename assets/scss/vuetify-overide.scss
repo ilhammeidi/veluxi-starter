@@ -1,3 +1,5 @@
+@use 'styles' as *;
+
 $dark-shadow: 0px 1px 10px 1px #404040, 0px 1px 1px 1px #2a2a2a, 0px 2px 8px -1px #141414;
 
 @-webkit-keyframes fadeIn2 {

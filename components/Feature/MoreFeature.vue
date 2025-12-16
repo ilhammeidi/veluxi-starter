@@ -168,7 +168,7 @@
 </template>
 
 <style scoped lang="scss">
-@import './feature-styles';
+@use'./feature-styles';
 </style>
 
 <script>

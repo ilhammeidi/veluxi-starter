@@ -39,7 +39,7 @@
 </template>
 
 <style scoped lang="scss">
-@import './blog-style';
+@use'./blog-style';
 </style>
 
 <script>

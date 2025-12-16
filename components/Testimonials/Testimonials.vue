@@ -26,7 +26,7 @@
 </template>
 
 <style scoped lang="scss">
-@import './testimonials-style';
+@use'./testimonials-style';
 </style>
 
 <script>

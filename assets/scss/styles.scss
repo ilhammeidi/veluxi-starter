@@ -2,39 +2,39 @@
 ** RTL Mixins including margin, pading, position, border and border radius
 ** See documentation https://www.npmjs.com/package/rtl-sass
 */
-@import '@/node_modules/rtl-sass/src/_rtl.scss';
+@forward '../../node_modules/rtl-sass/index';
 
 /*
 ** Color Var
 */
-@import './color-var';
+@forward 'color-var';
 
 /*
 ** Custom variable
 */
-@import './variables';
+@forward 'variables';
 
 /*
 ** Custom mixins
 */
-@import './mixins';
+@forward 'mixins';
 
 /*
 ** Custom functions
 */
-@import './functions';
+@forward 'functions';
 
 /*
 ** Custom media queries
 */
-@import './media-queries';
+@forward 'media-queries';
 
 /*
 ** Commons scss class
 */
-@import './common';
+@forward 'common';
 
 /*
 ** Image API variable
 */
-@import './url-img';
+@forward 'url-img';

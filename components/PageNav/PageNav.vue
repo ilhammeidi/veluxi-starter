@@ -49,7 +49,7 @@
 </template>
 
 <style scoped lang="scss">
-@import './pagenav-style';
+@use'./pagenav-style';
 </style>
 
 <script>

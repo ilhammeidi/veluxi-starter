@@ -46,5 +46,5 @@
 </template>
 
 <style scoped lang="scss">
-@import './subscribe-style';
+@use'./subscribe-style';
 </style>

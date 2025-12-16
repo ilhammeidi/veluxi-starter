@@ -21,7 +21,7 @@
 </template>
 
 <style scoped lang="scss">
-@import './testi-card';
+@use'./testi-card';
 </style>
 
 <script>

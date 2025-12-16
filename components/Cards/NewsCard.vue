@@ -35,7 +35,7 @@
 </template>
 
 <style scoped lang="scss">
-@import './post-news-card';
+@use'./post-news-card';
 </style>
 
 <script>

@@ -1,3 +1,4 @@
+@use "sass:map";
 /* See full documentation at:
 ** https://glennmccomb.com/articles/useful-sass-scss-media-query-mixins-for-bootstrap/
 */
@@ -31,10 +32,10 @@ $breakpoints-down: (
 @mixin breakpoints-up($breakpoint) {
 
   // If the breakpoint exists in the map.
-  @if map-has-key($breakpoints-up, $breakpoint) {
+  @if map.has-key($breakpoints-up, $breakpoint) {
 
     // Get the breakpoint value.
-    $breakpoint-value: map-get($breakpoints-up, $breakpoint);
+    $breakpoint-value: map.get($breakpoints-up, $breakpoint);
 
     // Write the media query.
     @media (min-width: $breakpoint-value) {
@@ -58,10 +59,10 @@ $breakpoints-down: (
 @mixin breakpoints-down($breakpoint) {
 
   // If the breakpoint exists in the map.
-  @if map-has-key($breakpoints-down, $breakpoint) {
+  @if map.has-key($breakpoints-down, $breakpoint) {
 
     // Get the breakpoint value.
-    $breakpoint-value: map-get($breakpoints-down, $breakpoint);
+    $breakpoint-value: map.get($breakpoints-down, $breakpoint);
 
     // Write the media query.
     @media (max-width: ($breakpoint-value - 1)) {
@@ -85,11 +86,11 @@ $breakpoints-down: (
 @mixin breakpoints-between($lower, $upper) {
 
   // If both the lower and upper breakpoints exist in the map.
-  @if map-has-key($breakpoints-up, $lower) and map-has-key($breakpoints-up, $upper) {
+  @if map.has-key($breakpoints-up, $lower) and map.has-key($breakpoints-up, $upper) {
 
     // Get the lower and upper breakpoints.
-    $lower-breakpoint: map-get($breakpoints-up, $lower);
-    $upper-breakpoint: map-get($breakpoints-up, $upper);
+    $lower-breakpoint: map.get($breakpoints-up, $lower);
+    $upper-breakpoint: map.get($breakpoints-up, $upper);
 
     // Write the media query.
     @media (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint - 1)) {
@@ -100,14 +101,14 @@ $breakpoints-down: (
   } @else {
 
     // If lower breakpoint is invalid.
-    @if (map-has-key($breakpoints, $lower) == false) {
+    @if (map.has-key($breakpoints, $lower) == false) {
 
       // Log a warning.
       @warn 'Your lower breakpoint was invalid: #{$lower}.';
     }
 
     // If upper breakpoint is invalid.
-    @if (map-has-key($breakpoints-up, $upper) == false) {
+    @if (map.has-key($breakpoints-up, $upper) == false) {
 
       // Log a warning.
       @warn 'Your upper breakpoint was invalid: #{$upper}.';

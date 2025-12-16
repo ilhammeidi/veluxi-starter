@@ -46,7 +46,7 @@
 </template>
 
 <style scoped lang="scss">
-@import './pricing-card';
+@use'./pricing-card';
 </style>
 
 <script>

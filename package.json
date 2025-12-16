@@ -22,17 +22,17 @@
   "dependencies": {
     "@mdi/font": "^7.0.96",
     "@splidejs/vue-splide": "^0.6.12",
-    "rtl-sass": "^1.5.0",
-    "vite-plugin-vuetify": "^1.0.2",
+    "rtl-sass": "^2.0.0",
+    "vite-plugin-vuetify": "^2.1.2",
     "vue-countup-v3": "^1.1.0",
     "vue-wow": "^1.2.0",
     "vue3-mq": "^3.1.3",
     "vue3-parallax": "^0.1.4",
     "vue3-smooth-scroll": "^0.8.1",
-    "vuetify": "^3.1.6"
+    "vuetify": "^3.11.3"
   },
   "devDependencies": {
-    "@nuxtjs/i18n": "^8.0.0-rc.4",
+    "@nuxtjs/i18n": "^9.5.6",
     "@vue/eslint-config-airbnb": "^6.0.0",
     "animate.css": "^3.7.2",
     "aos": "^2.3.4",
@@ -42,9 +42,9 @@
     "eslint-plugin-prettier": "2.6.2",
     "eslint-plugin-vue": "^8.0.3",
     "eslint-plugin-vuejs-accessibility": "^1.1.0",
-    "nuxt": "^3.7.3",
+    "nuxt": "^3.20.1",
     "prettier": "^2.8.4",
-    "sass": "^1.58.3",
+    "sass": "1.94.2",
     "vite-plugin-eslint": "^1.8.1"
   }
 }

@@ -1,3 +1,5 @@
+@use '@/assets/scss/styles' as *;
+
 @mixin decoration {
   @include use-theme(background, $palette-primary-light, $palette-primary-dark, );
   border-radius: 50%;

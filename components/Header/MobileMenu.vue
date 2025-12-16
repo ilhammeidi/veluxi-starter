@@ -35,7 +35,7 @@
 </template>
 
 <style scoped lang="scss">
-@import './header-style';
+@use'./header-style';
 </style>
 
 <script>

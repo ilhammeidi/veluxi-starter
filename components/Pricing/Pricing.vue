@@ -31,7 +31,7 @@
 </template>
 
 <style scoped lang="scss">
-@import './pricing-style';
+@use'./pricing-style';
 </style>
 
 <script>

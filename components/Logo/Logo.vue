@@ -9,7 +9,7 @@
 </template>
 
 <style scoped lang="scss">
-@import './logo-style.scss';
+@use'./logo-style.scss';
 </style>
 
 <script>

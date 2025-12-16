@@ -1,13 +1,16 @@
+@use "media-queries";
+@use "variables";
+
 .use-text {
   &-title {
-    font-weight: $font-bold;
+    font-weight: variables.$font-bold;
     font-size: 48px;
     line-height: 72px;
-    @include breakpoints-down(md) {
+    @include media-queries.breakpoints-down(md) {
       font-size: 38px;
       line-height: 60px;
     }
-    @include breakpoints-down(xs) {
+    @include media-queries.breakpoints-down(xs) {
       font-size: 28px;
       line-height: 44px;
     }
@@ -15,52 +18,52 @@
   &-title2 {
     font-size: 36px;
     line-height: 56px;
-    font-weight: $font-bold;
-    @include breakpoints-down(md) {
+    font-weight: variables.$font-bold;
+    @include media-queries.breakpoints-down(md) {
       font-size: 32px;
       line-height: 48px;
     }
-    @include breakpoints-down(xs) {
+    @include media-queries.breakpoints-down(xs) {
       font-size: 24px;
       line-height: 36px;
     }
   }
   &-subtitle {
-    font-weight: $font-medium;
+    font-weight: variables.$font-medium;
     font-size: 28px;
     line-height: 44px;
-    @include breakpoints-down(md) {
+    @include media-queries.breakpoints-down(md) {
       font-size: 24px;
       line-height: 36px;
     }
-    @include breakpoints-down(xs) {
+    @include media-queries.breakpoints-down(xs) {
       font-size: 18px;
       line-height: 28px;
     }
   }
   &-subtitle2 {
-    font-weight: $font-regular;
+    font-weight: variables.$font-regular;
     font-size: 22px;
     line-height: 32px;
-    @include breakpoints-down(md) {
+    @include media-queries.breakpoints-down(md) {
       font-size: 20px;
       line-height: 32px
     }
-    @include breakpoints-down(xs) {
+    @include media-queries.breakpoints-down(xs) {
       font-size: 16px;
       line-height: 24px;
     }
   }
   &-paragraph {
-    font-weight: $font-regular;
+    font-weight: variables.$font-regular;
     font-size: 16px;
     line-height: 24px
   }
   &-caption {
-    font-weight: $font-regular;
+    font-weight: variables.$font-regular;
     font-size: 16px;
     line-height: 24px;
-    @include breakpoints-down(xs) {
+    @include media-queries.breakpoints-down(xs) {
       font-size: 14px;
       line-height: 22px;
     }
@@ -69,37 +72,37 @@
 
 .use-hidden {
   &-lg-down {
-    @include breakpoints-down(lg) {
+    @include media-queries.breakpoints-down(lg) {
       display: none !important;
     }
   }
   &-md-down {
-    @include breakpoints-down(md) {
+    @include media-queries.breakpoints-down(md) {
       display: none !important;
     }
   }
   &-sm-down {
-    @include breakpoints-down(sm) {
+    @include media-queries.breakpoints-down(sm) {
       display: none !important;
     }
   }
   &-xs-down {
-    @include breakpoints-down(xs) {
+    @include media-queries.breakpoints-down(xs) {
       display: none !important;
     }
   }
   &-lg-up {
-    @include breakpoints-up(lg) {
+    @include media-queries.breakpoints-up(lg) {
       display: none !important;
     }
   }
   &-md-up {
-    @include breakpoints-up(md) {
+    @include media-queries.breakpoints-up(md) {
       display: none !important;
     }
   }
   &-sm-up {
-    @include breakpoints-up(sm) {
+    @include media-queries.breakpoints-up(sm) {
       display: none !important;
     }
   }

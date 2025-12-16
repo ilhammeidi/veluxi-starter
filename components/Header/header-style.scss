@@ -1,3 +1,5 @@
+@use '@/assets/scss/styles' as *;
+
 $flag: '/images/flag-logo.png';
 
 @mixin flag-icon{

@@ -72,7 +72,7 @@
 </template>
 
 <style scoped lang="scss">
-@import './counter-style';
+@use'./counter-style';
 </style>
 
 <script>

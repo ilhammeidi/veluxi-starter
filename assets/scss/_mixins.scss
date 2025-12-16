@@ -1,115 +1,68 @@
-/* Margin left and right */
-@mixin margin-left($val) {
-  @include rtl-sass-margin-left($val);
-}
-
-@mixin margin-right($val) {
-  @include rtl-sass-margin-right($val);
-}
-
-/* Padding left and right */
-@mixin padding-left($val) {
-  @include rtl-sass-padding-left($val);
-}
-
-@mixin padding-right($val) {
-  @include rtl-sass-padding-right($val);
-}
-
-/* Position left and right */
-
-@mixin left($val) {
-  @include rtl-sass-left($val);
-}
-
-@mixin right($val) {
-  @include rtl-sass-right($val);
-}
-
-/* Float */
-
-@mixin float($val) {
-  @include rtl-sass-float($val);
-}
-
-/* Text align */
-
-@mixin text-align($val) {
-  @include rtl-sass-text-align($val);
-}
-
-/* Border */
-@mixin border-left($val) {
-  @include rtl-sass-border-left($val);
-}
-
-@mixin border-right($val) {
-  @include rtl-sass-border-right($val);
-}
+@use "variables";
 
 /* Text color palette */
 @mixin palette-text-primary {
   .v-theme--light & {
-    color: $light-text-primary
+    color: variables.$light-text-primary
   }
   .v-theme--dark & {
-    color: $dark-text-primary
+    color: variables.$dark-text-primary
   }
 }
 
 @mixin palette-text-secondary {
   .v-theme--light & {
-    color: $light-text-secondary
+    color: variables.$light-text-secondary
   }
   .v-theme--dark & {
-    color: $dark-text-secondary
+    color: variables.$dark-text-secondary
   }
 }
 
 @mixin palette-text-disabled {
   .v-theme--light & {
-    color: $light-text-disabled
+    color: variables.$light-text-disabled
   }
   .v-theme--dark & {
-    color: $dark-text-disabled
+    color: variables.$dark-text-disabled
   }
 }
 
 @mixin palette-text-hint {
   .v-theme--light & {
-    color: $light-text-hint
+    color: variables.$light-text-hint
   }
   .v-theme--dark & {
-    color: $dark-text-hint
+    color: variables.$dark-text-hint
   }
 }
 
 /* Divider color palette */
 @mixin palette-divider {
   .v-theme--light & {
-    border-color: $light-divider
+    border-color: variables.$light-divider
   }
   .v-theme--dark & {
-    border-color: $dark-divider
+    border-color: variables.$dark-divider
   }
 }
 
 /* Background color palette */
 @mixin palette-background-paper {
   .v-theme--light & {
-    background-color: $light-background-paper
+    background-color: variables.$light-background-paper
   }
   .v-theme--dark & {
-    background-color: $dark-background-paper
+    background-color: variables.$dark-background-paper
   }
 }
 
 @mixin palette-background-default {
   .v-theme--light & {
-    background-color: $light-background-default
+    background-color: variables.$light-background-default
   }
   .v-theme--dark & {
-    background-color: $dark-background-default
+    background-color: variables.$dark-background-default
   }
 }
 
@@ -124,19 +77,19 @@
 
 @mixin palette-background-text-primary {
   .v-theme--light & {
-    background-color: $light-text-primary
+    background-color: variables.$light-text-primary
   }
   .v-theme--dark & {
-    background-color: $dark-text-secondary
+    background-color: variables.$dark-text-secondary
   }
 }
 
 @mixin palette-background-text-secondary {
   .v-theme--light & {
-    background-color: $light-text-secondary
+    background-color: variables.$light-text-secondary
   }
   .v-theme--dark & {
-    background-color: $dark-text-secondary
+    background-color: variables.$dark-text-secondary
   }
 }
 
@@ -164,7 +117,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-color: $palette-common-white;
+    background-color: variables.$palette-common-white;
     opacity: $opacity;
   }
 }
@@ -179,7 +132,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-color: $palette-common-black;
+    background-color: variables.$palette-common-black;
     opacity: $opacity;
   }
 }

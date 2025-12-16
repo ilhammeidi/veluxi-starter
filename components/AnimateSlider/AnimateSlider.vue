@@ -60,7 +60,7 @@
 </template>
 
 <style scoped lang="scss">
-@import './slider-styles';
+@use'./slider-styles';
 </style>
 
 <script>

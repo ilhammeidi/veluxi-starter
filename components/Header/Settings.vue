@@ -1,8 +1,6 @@
 <template>
   <v-menu
-    v-model="open"
-    :close-on-content-click="false"
-    location="bottom"
+    
     class="ma-0"
   >
     <template #activator="{ props }">
@@ -41,22 +39,22 @@
         <v-list-item
           v-for="(lang, index) in langList"
           :key="index"
-          :value="lang.code"
-          :to="switchLocalePath(lang.code)"
-          @click="switchLang(lang.code)"
+          :value="lang"
+          :to="$switchLocalePath(lang)"
+          @click="switchLang(lang)"
           nuxt
         >
           <template #prepend>
             <v-avatar class="flag">
-              <i :class="lang.code" />
+              <i :class="lang" />
             </v-avatar>
           </template>
           <v-list-item-title class="lang-opt">
-            {{ $t('common.'+lang.code) }}
+            {{ $t('common.'+lang) }}
           </v-list-item-title>
           <template #append>
             <v-icon
-              v-if="lang.code === curLang"
+              v-if="lang === curLang"
               color="primary"
             >
               mdi-check
@@ -69,13 +67,12 @@
 </template>
 
 <style lang="scss" scoped>
-@import './header-style.scss';
+@use'./header-style.scss';
 </style>
 
 <script>
 import { ref, onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
-import { useSwitchLocalePath } from 'vue-i18n-routing';
 import { toggleDark, setRtl } from '@/composables/uiTheme';
 
 export default {
@@ -90,8 +87,6 @@ export default {
     const i18n = useI18n();
     const isLoaded = ref(false);
     const curLang = i18n.locale.value;
-
-    const switchLocalePath = useSwitchLocalePath();
 
     onMounted(() => {
       isLoaded.value = true;
@@ -123,7 +118,6 @@ export default {
       curLang,
       switchDark,
       switchLang,
-      switchLocalePath,
     };
   },
   data: () => ({
@@ -131,7 +125,7 @@ export default {
   }),
   computed: {
     langList() {
-      return this.$i18n.locales;
+      return this.$i18n.availableLocales;
     },
   },
 };

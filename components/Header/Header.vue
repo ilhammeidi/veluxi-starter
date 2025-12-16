@@ -90,7 +90,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import './header-style.scss';
+@use'./header-style.scss';
 </style>
 
 <script>
